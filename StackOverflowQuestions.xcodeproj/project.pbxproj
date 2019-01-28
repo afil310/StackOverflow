@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5545C60521FF4455009F4425 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5545C60321FF4455009F4425 /* LICENSE */; };
+		5545C60621FF4455009F4425 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5545C60421FF4455009F4425 /* README.md */; };
+		5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */ = {isa = PBXBuildFile; fileRef = 5545C60921FF4EC5009F4425 /* UITableView.png */; };
 		559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */; };
 		559A9E8C21FDCC8D00DBB617 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8B21FDCC8D00DBB617 /* ViewController.swift */; };
 		559A9E8F21FDCC8D00DBB617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559A9E8D21FDCC8D00DBB617 /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5545C60321FF4455009F4425 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		5545C60421FF4455009F4425 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5545C60921FF4EC5009F4425 /* UITableView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableView.png; sourceTree = "<group>"; };
 		559A9E8621FDCC8D00DBB617 /* StackOverflowQuestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowQuestions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		559A9E8B21FDCC8D00DBB617 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,10 +51,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5545C60821FF4EC5009F4425 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				5545C60921FF4EC5009F4425 /* UITableView.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		559A9E7D21FDCC8D00DBB617 = {
 			isa = PBXGroup;
 			children = (
 				559A9E8821FDCC8D00DBB617 /* StackOverflowQuestions */,
+				5545C60821FF4EC5009F4425 /* Screenshots */,
+				5545C60321FF4455009F4425 /* LICENSE */,
+				5545C60421FF4455009F4425 /* README.md */,
 				559A9E8721FDCC8D00DBB617 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -138,7 +155,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				559A9E9421FDCC8F00DBB617 /* LaunchScreen.storyboard in Resources */,
+				5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */,
 				559A9E9121FDCC8F00DBB617 /* Assets.xcassets in Resources */,
+				5545C60621FF4455009F4425 /* README.md in Resources */,
+				5545C60521FF4455009F4425 /* LICENSE in Resources */,
 				559A9E8F21FDCC8D00DBB617 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
