@@ -42,6 +42,7 @@ class HTTPClient {
     }
 }
 
+
 protocol HTTPClientDelegate: AnyObject {
     func requestCompleted(data: Data)
 }

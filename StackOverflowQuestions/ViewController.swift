@@ -13,17 +13,13 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-//    var questions = [Question]()
     var response: Response?
     var tableDataSource: TableDataSource?
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
-        
         loadData(url: StackoverflowURL().url)
     }
     
@@ -32,7 +28,6 @@ class ViewController: UIViewController {
         client.delegate = self
         client.request()
     }
-
     
     func printServiceInfo() {
         guard let response = self.response else {
@@ -56,20 +51,20 @@ class ViewController: UIViewController {
             print("Data decoding error:", error)
         }
     }
-
 }
+
 
 extension ViewController: HTTPClientDelegate {
     func requestCompleted(data: Data) {
         decodeAnswer(data: data)
         tableDataSource = TableDataSource(response: response)
-        
         DispatchQueue.main.async {
             self.tableView.dataSource = self.tableDataSource
             self.tableView.reloadData()
         }
     }
 }
+
 
 extension ViewController: UITableViewDelegate {
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -84,4 +79,3 @@ extension ViewController: UITableViewDelegate {
         present(safariVC, animated: true)
     }
 }
-

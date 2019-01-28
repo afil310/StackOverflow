@@ -8,7 +8,7 @@ A simple study project, the solution for the classic job interview coding task f
 "Write some code to download a bit of JSON via HTTP, and use the parsed JSON to present some data in a UITableView."
 
 The app uses <a href="https://api.stackexchange.com/docs/types/question">StackOverflow API</a> to download the list of the most rated questions for the last month, and represent it as a table. Each question can be opened in the Safari View.
-<p align="center"><img src ="https://raw.githubusercontent.com/afil310/StackOverflowQuestions/master/Screenshots/UITableView.png" width="300px"/></p>
+<p align="center"><img src ="https://raw.githubusercontent.com/afil310/StackOverflowQuestions/master/Screenshots/UITableView.png?token=ArB8V452FwE7-rGRoqOSl3c2dL6uk_ccks5cTxf0wA%3D%3D" width="300px"/></p>
 
 ## Requirements
 
