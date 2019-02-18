@@ -15,13 +15,33 @@ class ViewController: UIViewController {
     
     var response: Response?
     var tableDataSource: TableDataSource?
+    var soURL = StackoverflowURL()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationBar()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
-        loadData(url: StackoverflowURL().url)
+        loadData(url: soURL.url)
     }
+    
+    
+    func setupNavigationBar() {
+        let settingsBarButtonItem = UIBarButtonItem(image: UIImage(named: "Settings"), style: .plain, target: self, action: #selector(settingsTapped))
+        navigationItem.rightBarButtonItem = settingsBarButtonItem
+    }
+    
+    
+    @objc func settingsTapped() {
+        let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
+        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsPage") as? SettingsPageController else {
+            return
+        }
+        settingsPage.soURL = soURL
+        settingsPage.delegate = self
+        present(settingsPage, animated: true)
+    }
+    
     
     func loadData(url: URL?) {
         let client = HTTPClient(url: url)
@@ -72,10 +92,17 @@ extension ViewController: UITableViewDelegate {
             return
         }
         guard let url = URL(string: urlString) else {
-            print("Error converting to URL link", urlString)
+            print("Error converting \(urlString) to URL link")
             return
         }
         let safariVC = SFSafariViewController(url: url)
         present(safariVC, animated: true)
+    }
+}
+
+
+extension ViewController: SettingsPageDelegate {
+    func settingsChanged() {
+        loadData(url: soURL.url)
     }
 }

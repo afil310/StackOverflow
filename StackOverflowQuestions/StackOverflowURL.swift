@@ -10,7 +10,7 @@ import Foundation
 
 //   Example: "https://api.stackexchange.com/2.2/questions?fromdate=1548460800&todate=1548547200&order=desc&min=10&sort=votes&site=stackoverflow"
 
-struct StackoverflowURL {
+class StackoverflowURL {
     let domain = "https://api.stackexchange.com"
     let version = "2.2"
     let requestType = "questions?"

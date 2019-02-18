@@ -43,11 +43,9 @@ class TableDataSource: NSObject, UITableViewDataSource {
             cell.viewsCount.text = String(Int(round(Double(question.view_count)/1000000.0))) + "m"
         }
         
-        if question.is_answered {
-            cell.answersCount.backgroundColor = UIColor(red: 95/255, green: 186/255, blue: 125/255, alpha: 1.0)
-        } else {
-            cell.answersCount.backgroundColor = UIColor(red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0)
-        }
+        cell.answersCount.backgroundColor = question.is_answered ?
+        UIColor(red: 95/255, green: 186/255, blue: 125/255, alpha: 1.0) :
+        UIColor(red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0)
         
         cell.date.text = int2date(unixdate: question.last_activity_date)
         var tagsText = "|"
