@@ -56,7 +56,7 @@
                                                                             <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="24" id="Pou-hM-ZHo"/>
-                                                                                <constraint firstAttribute="width" constant="44" id="cxO-Gk-oB4"/>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="cxO-Gk-oB4"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="8"/>
                                                                             <nil key="textColor"/>
@@ -91,7 +91,7 @@
                                                                             <rect key="frame" x="0.0" y="32" width="20" height="24"/>
                                                                             <color key="backgroundColor" red="0.17760746880010947" green="0.83987207495279181" blue="0.41561100272695128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="width" constant="20" id="J7o-in-3V5"/>
+                                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="20" id="J7o-in-3V5"/>
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="8"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

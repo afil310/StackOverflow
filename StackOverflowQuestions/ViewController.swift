@@ -15,14 +15,14 @@ class ViewController: UIViewController {
     
     var response: Response?
     var tableDataSource: TableDataSource?
-    var soURL = StackoverflowURL()
+    var soRequest = StackoverflowRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
-        loadData(url: soURL.url)
+        loadData(url: soRequest.url)
     }
     
     
@@ -34,12 +34,17 @@ class ViewController: UIViewController {
     
     @objc func settingsTapped() {
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
-        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsPage") as? SettingsPageController else {
+//        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsPage") as? SettingsPageController else {
+//            return
+//        }
+        
+        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsTable") as? SettingsTableViewController else {
             return
         }
-        settingsPage.soURL = soURL
+        let navigationController = UINavigationController(rootViewController: settingsPage)
+        settingsPage.soRequest = soRequest
         settingsPage.delegate = self
-        present(settingsPage, animated: true)
+        present(navigationController, animated: true)
     }
     
     
@@ -87,7 +92,7 @@ extension ViewController: HTTPClientDelegate {
 
 
 extension ViewController: UITableViewDelegate {
-    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let urlString = response?.items[indexPath.row].link else {
             return
         }
@@ -101,8 +106,9 @@ extension ViewController: UITableViewDelegate {
 }
 
 
-extension ViewController: SettingsPageDelegate {
+extension ViewController: SettingsTableDelegate {
     func settingsChanged() {
-        loadData(url: soURL.url)
+        print("Delegate call: sortBy =", soRequest.sortBy)
+        loadData(url: soRequest.url)
     }
 }
