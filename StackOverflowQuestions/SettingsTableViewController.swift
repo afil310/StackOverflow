@@ -73,10 +73,6 @@ class SettingsTableViewController: UITableViewController {
     
     
     func createPicker(parameterName: String, currentValue: String?) {
-        let dummy = UITextField(frame: CGRect())
-        view.addSubview(dummy)
-        createPickerToolbar(dummy)
-        
         let picker = SinglePicker()
         picker.parameterName = parameterName
         picker.componentValues = parametersDict[parameterName] ?? []
@@ -84,12 +80,16 @@ class SettingsTableViewController: UITableViewController {
             picker.selectRow(currentValueIndex, inComponent: 0, animated: true)
         }
         picker.delegate = self
-        dummy.inputView = picker
-        dummy.becomeFirstResponder()
+        
+        let dummyTextField = UITextField(frame: CGRect.zero)
+        view.addSubview(dummyTextField)
+        createPickerToolbar(dummyTextField)
+        dummyTextField.inputView = picker //a simple way to present UIPickerView at the bottom of the screen like the keyboard is to attach it as the inputView of a dummy 0-sized UITextField
+        dummyTextField.becomeFirstResponder()
     }
     
     
-    func createPickerToolbar(_ field: UITextField) {
+    func createPickerToolbar(_ textField: UITextField) {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneChoosingParameter))
@@ -99,7 +99,7 @@ class SettingsTableViewController: UITableViewController {
         let flexibleSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
         toolbar.setItems([flexibleSpace, doneButton, flexibleSpace, flexibleSpace, cancelButton, flexibleSpace], animated: false)
         toolbar.isUserInteractionEnabled = true
-        field.inputAccessoryView = toolbar
+        textField.inputAccessoryView = toolbar
     }
     
     
@@ -108,6 +108,7 @@ class SettingsTableViewController: UITableViewController {
         delegate?.settingsChanged()
         view.endEditing(true)
     }
+    
     
     @objc func cancelChoosingParameter() {
         view.endEditing(true)
@@ -121,6 +122,7 @@ extension SettingsTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
         return 1
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         guard let picker = pickerView as? SinglePicker else {
             return 0
@@ -128,12 +130,14 @@ extension SettingsTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
         return picker.componentValues.count
     }
     
+    
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         guard let picker = pickerView as? SinglePicker else {
             return nil
         }
         return picker.componentValues[row]
     }
+    
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         guard let picker = pickerView as? SinglePicker else {
@@ -160,12 +164,6 @@ extension SettingsTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
     }
 }
 
-
-class SinglePicker: UIPickerView {
-    var numOfComponents = 1
-    var parameterName = ""
-    var componentValues = [String]()
-}
 
 protocol SettingsTableDelegate: AnyObject {
     func settingsChanged()
