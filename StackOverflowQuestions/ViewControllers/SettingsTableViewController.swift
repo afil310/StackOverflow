@@ -11,8 +11,19 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var sortByTextField: UITextField!
+    @IBOutlet weak var sortOrderTextField: UITextField!
+    @IBOutlet weak var fromDateTextField: UITextField!
+    @IBOutlet weak var toDateTextField: UITextField!
+    @IBOutlet weak var tagTextField: UITextField!
+    @IBOutlet weak var quotaMaxTextField: UITextField!
+    @IBOutlet weak var quotaRemainingTextField: UITextField!
+    @IBOutlet weak var appVersionTextField: UITextField!
     
-    var soRequest: StackoverflowRequest?
+    
+    var soRequest = StackoverflowRequest()
+    var soRequestLocalCopy = StackoverflowRequest()
+    var quotaMax = 0
+    var quotaRemaining = 0
     weak var delegate: SettingsTableDelegate?
     
     enum Parameter {
@@ -31,7 +42,9 @@ class SettingsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        soRequestLocalCopy = soRequest
         setupNavigationBar()
+        setupTableValues()
     }
     
     
@@ -46,8 +59,26 @@ class SettingsTableViewController: UITableViewController {
     }
     
     
+    func setupTableValues() {
+        sortByTextField.text = soRequestLocalCopy.sortBy
+        sortOrderTextField.text = soRequestLocalCopy.sortOrder
+        fromDateTextField.text = soRequestLocalCopy.fromDate.convertToDate()
+        toDateTextField.text = soRequestLocalCopy.toDate.convertToDate()
+        tagTextField.text = soRequestLocalCopy.tag != "" ? soRequestLocalCopy.tag : "None"
+        quotaRemainingTextField.text = String(quotaRemaining)
+        quotaMaxTextField.text = String(quotaMax)
+        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
+            else {return}
+        appVersionTextField.text = String(version + " build " + build)
+    }
+    
+    
     @objc func doneButtonTapped() {
-        delegate?.settingsChanged()
+        if !(soRequestLocalCopy == soRequest) {
+            delegate?.settingsChanged(request: soRequestLocalCopy)
+            persistRequestParameters(soRequestLocalCopy: soRequestLocalCopy)
+        }
         dismiss(animated: true)
     }
     
@@ -60,11 +91,11 @@ class SettingsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            createPicker(parameterName: Parameter.sortBy, currentValue: soRequest?.sortBy)
+            createPicker(parameterName: Parameter.sortBy, currentValue: soRequestLocalCopy.sortBy)
         case 1:
-            createPicker(parameterName: Parameter.sortOrder, currentValue: soRequest?.sortOrder)
+            createPicker(parameterName: Parameter.sortOrder, currentValue: soRequestLocalCopy.sortOrder)
         case 4:
-            createPicker(parameterName: Parameter.tag, currentValue: soRequest?.tag)
+            createPicker(parameterName: Parameter.tag, currentValue: soRequestLocalCopy.tag)
         case 2, 3:
             //implement date picker here
             return
@@ -76,17 +107,16 @@ class SettingsTableViewController: UITableViewController {
     
     func createPicker(parameterName: String, currentValue: String?) {
         let picker = SinglePicker()
+        picker.delegate = self
         picker.parameterName = parameterName
         picker.componentValues = parametersDict[parameterName] ?? []
         if let currentValueIndex = picker.componentValues.index(of: currentValue ?? "") {
             picker.selectRow(currentValueIndex, inComponent: 0, animated: true)
         }
-        picker.delegate = self
-        
         let dummyTextField = UITextField(frame: CGRect.zero)
         view.addSubview(dummyTextField)
         createPickerToolbar(dummyTextField)
-        dummyTextField.inputView = picker //a simple way to present UIPickerView at the bottom of the screen like the keyboard is to attach it as the inputView of a dummy 0-sized UITextField
+        dummyTextField.inputView = picker //a simple way to present UIPickerView at the bottom of the screen like a keyboard, is to attach a picker as the inputView for a dummy 0-sized UITextField
         dummyTextField.becomeFirstResponder()
     }
     
@@ -95,25 +125,28 @@ class SettingsTableViewController: UITableViewController {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(doneChoosingParameter))
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancelChoosingParameter))
         let fixedSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.fixedSpace, target: nil, action: nil)
-        fixedSpace.width = 20.0
+        fixedSpace.width = 16.0
         let flexibleSpace: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
-        toolbar.setItems([flexibleSpace, doneButton, flexibleSpace, flexibleSpace, cancelButton, flexibleSpace], animated: false)
+        toolbar.setItems([fixedSpace, doneButton, flexibleSpace], animated: false)
         toolbar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolbar
     }
     
     
     @objc func doneChoosingParameter() {
-        //change lable text in tableview
-        delegate?.settingsChanged()
+        setupTableValues()
         view.endEditing(true)
     }
     
     
-    @objc func cancelChoosingParameter() {
-        view.endEditing(true)
+    func persistRequestParameters(soRequestLocalCopy: StackoverflowRequest) {
+        let defaults = UserDefaults.standard
+        defaults.set(soRequestLocalCopy.toDate, forKey: "toDate")
+        defaults.set(soRequestLocalCopy.fromDate, forKey: "fromDate")
+        defaults.set(soRequestLocalCopy.sortOrder, forKey: "sortOrder")
+        defaults.set(soRequestLocalCopy.sortBy, forKey: "sortBy")
+        defaults.set(soRequestLocalCopy.tag, forKey: "tag")
     }
 }
 
@@ -149,11 +182,11 @@ extension SettingsTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
         
         switch picker.parameterName {
         case Parameter.sortBy:
-            soRequest?.sortBy = selectedValue
+            soRequestLocalCopy.sortBy = selectedValue
         case Parameter.sortOrder:
-            soRequest?.sortOrder = selectedValue
+            soRequestLocalCopy.sortOrder = selectedValue
         case Parameter.tag:
-            soRequest?.tag = selectedValue
+            soRequestLocalCopy.tag = selectedValue != "None" ? selectedValue : ""
         case Parameter.fromDate:
 //            soRequest?.fromDate = selectedValue
             return
@@ -168,5 +201,16 @@ extension SettingsTableViewController: UIPickerViewDelegate, UIPickerViewDataSou
 
 
 protocol SettingsTableDelegate: AnyObject {
-    func settingsChanged()
+    func settingsChanged(request: StackoverflowRequest)
+}
+
+
+extension Int {
+    func convertToDate() -> String {
+        let date = NSDate(timeIntervalSince1970: TimeInterval(self))
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.dateFormat = "dd-MMM-YYYY"
+        return dateFormatter.string(from: date as Date)
+    }
 }

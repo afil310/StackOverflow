@@ -31,20 +31,20 @@ class ViewController: UIViewController {
                                                     style: .plain, target: self,
                                                     action: #selector(settingsTapped))
         navigationItem.rightBarButtonItem = settingsBarButtonItem
+        navigationItem.title = "Questions"
     }
     
     
     @objc func settingsTapped() {
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
-//        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsPage") as? SettingsPageController else {
-//            return
-//        }
         
         guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsTable") as? SettingsTableViewController else {
             return
         }
         let navigationController = UINavigationController(rootViewController: settingsPage)
         settingsPage.soRequest = soRequest
+        settingsPage.quotaMax = response?.quota_max ?? 0
+        settingsPage.quotaRemaining = response?.quota_remaining ?? 0
         settingsPage.delegate = self
         present(navigationController, animated: true)
     }
@@ -109,8 +109,9 @@ extension ViewController: UITableViewDelegate {
 
 
 extension ViewController: SettingsTableDelegate {
-    func settingsChanged() {
-        print("Delegate call: sortBy =", soRequest.sortBy)
-        loadData(url: soRequest.url)
+    func settingsChanged(request: StackoverflowRequest) {
+        print("Delegate call: sortBy =", request.sortBy)
+        soRequest = request
+        loadData(url: request.url)
     }
 }

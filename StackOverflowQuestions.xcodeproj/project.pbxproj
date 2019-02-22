@@ -81,6 +81,35 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		55422883221FB92C00823775 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */,
+				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
+				559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */,
+				55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		55422884221FB98A00823775 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				55C0898121FE90C400B0F42E /* HTTPClient.swift */,
+				55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		55422885221FB9BD00823775 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				559A9E8B21FDCC8D00DBB617 /* ViewController.swift */,
+				55AE3D4D221AD85400A2293C /* SettingsTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		5545C60821FF4EC5009F4425 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +123,6 @@
 			children = (
 				559A9E8821FDCC8D00DBB617 /* StackOverflowQuestions */,
 				5545C60821FF4EC5009F4425 /* Screenshots */,
-				5545C60321FF4455009F4425 /* LICENSE */,
-				5545C60421FF4455009F4425 /* README.md */,
 				559A9E8721FDCC8D00DBB617 /* Products */,
 				4987790193D87F58E32BC242 /* Pods */,
 				2D6F95D9DBFC7869A6D81EE8 /* Frameworks */,
@@ -114,18 +141,15 @@
 			isa = PBXGroup;
 			children = (
 				559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */,
-				55AE3D4C221AB35D00A2293C /* Storyboards */,
 				559A9E9021FDCC8F00DBB617 /* Assets.xcassets */,
-				559A9E9521FDCC8F00DBB617 /* Info.plist */,
-				559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */,
-				55C0898121FE90C400B0F42E /* HTTPClient.swift */,
-				55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */,
-				55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */,
-				55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */,
-				559A9E8B21FDCC8D00DBB617 /* ViewController.swift */,
-				55AE3D4D221AD85400A2293C /* SettingsTableViewController.swift */,
-				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
+				55422883221FB92C00823775 /* Models */,
+				55422884221FB98A00823775 /* Networking */,
+				55AE3D4C221AB35D00A2293C /* Storyboards */,
+				55422885221FB9BD00823775 /* ViewControllers */,
 				55422881221FB2BB00823775 /* .swiftlint.yml */,
+				5545C60421FF4455009F4425 /* README.md */,
+				5545C60321FF4455009F4425 /* LICENSE */,
+				559A9E9521FDCC8F00DBB617 /* Info.plist */,
 			);
 			path = StackOverflowQuestions;
 			sourceTree = "<group>";
