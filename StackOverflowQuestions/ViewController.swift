@@ -27,7 +27,9 @@ class ViewController: UIViewController {
     
     
     func setupNavigationBar() {
-        let settingsBarButtonItem = UIBarButtonItem(image: UIImage(named: "Settings"), style: .plain, target: self, action: #selector(settingsTapped))
+        let settingsBarButtonItem = UIBarButtonItem(image: UIImage(named: "Settings"),
+                                                    style: .plain, target: self,
+                                                    action: #selector(settingsTapped))
         navigationItem.rightBarButtonItem = settingsBarButtonItem
     }
     
@@ -62,8 +64,8 @@ class ViewController: UIViewController {
         print("Questions downloaded: \(String(describing: response.items.count))")
         print("Quota: \(String(describing: response.quota_max)), remained: \(String(describing: response.quota_remaining))")
         print("---------------------------")
-        for q in response.items {
-            print(q.title, q.tags)
+        for item in response.items {
+            print(item.title, item.tags)
         }
     }
     

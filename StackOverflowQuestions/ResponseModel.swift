@@ -9,6 +9,9 @@
 // Question type: https://api.stackexchange.com/docs/types/question
 // Owner type: https://api.stackexchange.com/docs/types/shallow-user
 
+// swiftlint:disable identifier_name
+// identifier names checking is disabled as identifier are compliant with the stackexchange API response model
+
 class Response: Codable {
     let items: [Question]
     let has_more: Bool

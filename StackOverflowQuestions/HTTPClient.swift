@@ -19,8 +19,7 @@ class HTTPClient {
         configuration = URLSessionConfiguration.default
         session = URLSession(configuration: configuration)
         if url != nil {
-            task = session.dataTask(with: url!) {
-                (data, response, error) in
+            task = session.dataTask(with: url!) { (data, response, error) in
                 guard let httpResponse = response as? HTTPURLResponse else {
                     return
                 }

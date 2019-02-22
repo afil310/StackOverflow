@@ -36,9 +36,11 @@ class SettingsTableViewController: UITableViewController {
     
     
     func setupNavigationBar() {
-        let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        let doneBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done,
+                                                target: self, action: #selector(doneButtonTapped))
         navigationItem.leftBarButtonItem = doneBarButtonItem
-        let cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelButtonTapped))
+        let cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
+                                                  target: self, action: #selector(cancelButtonTapped))
         navigationItem.rightBarButtonItem = cancelBarButtonItem
         navigationItem.title = "Settings"
     }

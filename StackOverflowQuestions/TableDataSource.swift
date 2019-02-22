@@ -24,8 +24,8 @@ class TableDataSource: NSObject, UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as! QuestionCell
-        guard let question = response?.items[indexPath.row] else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionCell,
+            let question = response?.items[indexPath.row] else {
             return UITableViewCell()
         }
         
