@@ -11,11 +11,13 @@ import SafariServices
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var tableView: UITableView!
     
     var response: Response?
     var tableDataSource: TableDataSource?
     var soRequest = StackoverflowRequest()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,9 +54,10 @@ class ViewController: UIViewController {
     
     func loadData(url: URL?) {
         let client = HTTPClient(url: url)
-        client.delegate = self
+        client.httpClientDelegate = self
         client.request()
     }
+    
     
     func printServiceInfo() {
         guard let response = self.response else {
@@ -68,6 +71,7 @@ class ViewController: UIViewController {
             print(item.title, item.tags)
         }
     }
+    
     
     func decodeAnswer(data: Data) {
         do {
@@ -90,6 +94,17 @@ extension ViewController: HTTPClientDelegate {
             self.tableView.reloadData()
         }
     }
+    
+    
+    func dataTaskProgress(progress: Float) {
+        progressView.alpha = 1.0
+        progressView.progress = progress
+        if progress == 1.0 {
+            UIView.animate(withDuration: 2.0, animations: {
+                self.progressView.alpha = 0.0
+            })
+        }
+    }
 }
 
 
@@ -110,7 +125,6 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: SettingsTableDelegate {
     func settingsChanged(request: StackoverflowRequest) {
-        print("Delegate call: sortBy =", request.sortBy)
         soRequest = request
         loadData(url: request.url)
     }

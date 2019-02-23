@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StackOverflowLogo" translatesAutoresizingMaskIntoConstraints="NO" id="vuI-Xs-GST">
-                                <rect key="frame" x="10" y="290" width="355" height="87"/>
+                                <rect key="frame" x="56.5" y="301.5" width="262.5" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vuI-Xs-GST" secondAttribute="height" multiplier="455:111" id="GmC-YY-Jai"/>
                                 </constraints>
@@ -27,12 +27,29 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vuI-Xs-GST" secondAttribute="trailing" constant="10" id="Ced-D7-Ths"/>
-                            <constraint firstItem="vuI-Xs-GST" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="FL6-9k-GMy"/>
+                            <constraint firstItem="vuI-Xs-GST" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.4" id="QLe-RO-GzP"/>
                             <constraint firstItem="vuI-Xs-GST" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="VVf-r0-aKu"/>
+                            <constraint firstItem="vuI-Xs-GST" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.7" id="pPe-23-xOz"/>
                             <constraint firstItem="vuI-Xs-GST" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="wgx-f5-0lC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QLe-RO-GzP"/>
+                                <exclude reference="pPe-23-xOz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="pPe-23-xOz"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="QLe-RO-GzP"/>
+                                <exclude reference="pPe-23-xOz"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -59,17 +59,13 @@ struct StackoverflowRequest: Equatable {
     }
     
     static func == (larg: StackoverflowRequest, rarg: StackoverflowRequest) -> Bool {
-        if  larg.toDate == rarg.toDate &&
+        return  larg.toDate == rarg.toDate &&
             larg.fromDate == rarg.fromDate &&
             larg.pageSize == rarg.pageSize &&
             larg.sortOrder == rarg.sortOrder &&
             larg.sortBy == rarg.sortBy &&
 //            larg.sortMinValue == rarg.sortMinValue &&
             larg.tag == rarg.tag &&
-            larg.site == rarg.site {
-            return true
-        } else {
-            return false
-        }
+            larg.site == rarg.site
     }
 }

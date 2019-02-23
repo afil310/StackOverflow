@@ -11,6 +11,8 @@
 		55422882221FB2BB00823775 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 55422881221FB2BB00823775 /* .swiftlint.yml */; };
 		55422889222030E800823775 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 55422887222030E700823775 /* README.md */; };
 		5542288A222030E800823775 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 55422888222030E800823775 /* LICENSE */; };
+		5542288D22211B9500823775 /* Questions.png in Resources */ = {isa = PBXBuildFile; fileRef = 5542288B22211B9400823775 /* Questions.png */; };
+		5542288E22211B9500823775 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 5542288C22211B9500823775 /* Settings.png */; };
 		5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */ = {isa = PBXBuildFile; fileRef = 5545C60921FF4EC5009F4425 /* UITableView.png */; };
 		559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */; };
 		559A9E8C21FDCC8D00DBB617 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8B21FDCC8D00DBB617 /* ViewController.swift */; };
@@ -31,6 +33,8 @@
 		55422881221FB2BB00823775 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		55422887222030E700823775 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		55422888222030E800823775 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		5542288B22211B9400823775 /* Questions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Questions.png; sourceTree = "<group>"; };
+		5542288C22211B9500823775 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		5545C60921FF4EC5009F4425 /* UITableView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableView.png; sourceTree = "<group>"; };
 		559A9E8621FDCC8D00DBB617 /* StackOverflowQuestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowQuestions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 		5545C60821FF4EC5009F4425 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
+				5542288B22211B9400823775 /* Questions.png */,
+				5542288C22211B9500823775 /* Settings.png */,
 				5545C60921FF4EC5009F4425 /* UITableView.png */,
 			);
 			path = Screenshots;
@@ -224,9 +230,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5542288E22211B9500823775 /* Settings.png in Resources */,
 				55422882221FB2BB00823775 /* .swiftlint.yml in Resources */,
 				559A9E9421FDCC8F00DBB617 /* LaunchScreen.storyboard in Resources */,
 				5542288A222030E800823775 /* LICENSE in Resources */,
+				5542288D22211B9500823775 /* Questions.png in Resources */,
 				5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */,
 				55422889222030E800823775 /* README.md in Resources */,
 				559A9E9121FDCC8F00DBB617 /* Assets.xcassets in Resources */,

@@ -18,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.10000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="VHW-2K-iRs">
+                                <rect key="frame" x="0.0" y="64" width="375" height="3"/>
+                                <color key="tintColor" red="1" green="0.28000961410000003" blue="0.23331396609999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="XQE-Cl-IQB"/>
+                                </constraints>
+                            </progressView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Q04-x6-YA9">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="67" width="375" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="questionCell" rowHeight="104" id="RJF-EE-uYr" customClass="QuestionCell" customModule="StackOverflowQuestions" customModuleProvider="target">
@@ -176,15 +183,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="VHW-2K-iRs" secondAttribute="top" id="23d-ON-ihr"/>
                             <constraint firstItem="Q04-x6-YA9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2of-0f-aMc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q04-x6-YA9" secondAttribute="bottom" id="YbR-ss-Irv"/>
-                            <constraint firstItem="Q04-x6-YA9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="h5f-XE-aSw"/>
+                            <constraint firstItem="VHW-2K-iRs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fed-c3-P9H"/>
+                            <constraint firstItem="VHW-2K-iRs" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="Sft-Bq-571"/>
+                            <constraint firstAttribute="bottom" secondItem="Q04-x6-YA9" secondAttribute="bottom" id="YbR-ss-Irv"/>
+                            <constraint firstItem="Q04-x6-YA9" firstAttribute="top" secondItem="VHW-2K-iRs" secondAttribute="bottom" id="h5f-XE-aSw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q04-x6-YA9" secondAttribute="trailing" id="pUK-oN-wJA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="33C-Zh-a1z"/>
                     <connections>
+                        <outlet property="progressView" destination="VHW-2K-iRs" id="AJ8-nT-HUx"/>
                         <outlet property="tableView" destination="Q04-x6-YA9" id="eLh-hQ-lZj"/>
                     </connections>
                 </viewController>

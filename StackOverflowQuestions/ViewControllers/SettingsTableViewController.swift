@@ -110,7 +110,7 @@ class SettingsTableViewController: UITableViewController {
         picker.delegate = self
         picker.parameterName = parameterName
         picker.componentValues = parametersDict[parameterName] ?? []
-        if let currentValueIndex = picker.componentValues.index(of: currentValue ?? "") {
+        if let currentValueIndex = picker.componentValues.firstIndex(of: currentValue ?? "") {
             picker.selectRow(currentValueIndex, inComponent: 0, animated: true)
         }
         let dummyTextField = UITextField(frame: CGRect.zero)
@@ -152,7 +152,6 @@ class SettingsTableViewController: UITableViewController {
 
 
 extension SettingsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
