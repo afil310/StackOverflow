@@ -6,8 +6,8 @@
 ## Description
 A simple StackOverflow viewer.
 
-The app implements <a href="https://api.stackexchange.com/docs/types/question">StackOverflow API</a> to download the list of the most rated | hot | most recent questions for the specified period of time, and represents it as a table. Each question can be opened in the Safari View.
-<p align="center"><img src ="https://github.com/afil310/StackOverflowQuestions/raw/master/Screenshots/Settings.png?raw=true" width="300px"/><img src ="https://github.com/afil310/StackOverflowQuestions/raw/master/Screenshots/Questions.png?raw=true" width="300px"/></p>
+The app implements <a href="https://api.stackexchange.com/docs/types/question">StackOverflow API</a> to download the list of the most rated | hot | most recent questions for the specified period of time, and represents it as a table. Each question can be opened in a separate Safari View.
+<p align="center"><img src ="https://github.com/afil310/StackOverflowQuestions/raw/master/Screenshots/Questions.png?raw=true" width="300px"/> <img src ="https://github.com/afil310/StackOverflowQuestions/raw/master/Screenshots/Settings.png?raw=true" width="300px"/></p>
 
 
 ## Requirements
@@ -19,7 +19,7 @@ The app implements <a href="https://api.stackexchange.com/docs/types/question">S
 
 ## Author
 
-Andrey Filonov, andrey.filonov@gmail.com
+Andrey Filonov andrey.filonov@gmail.com
 
 ## License
 

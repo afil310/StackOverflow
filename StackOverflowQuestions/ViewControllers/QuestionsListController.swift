@@ -9,7 +9,7 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController {
+class QuestionsListController: UIViewController {
 
     @IBOutlet weak var progressView: UIProgressView!
     @IBOutlet weak var tableView: UITableView!
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     @objc func settingsTapped() {
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
         
-        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsTable") as? SettingsTableViewController else {
+        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsTable") as? SettingsTableController else {
             return
         }
         let navigationController = UINavigationController(rootViewController: settingsPage)
@@ -85,7 +85,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: HTTPClientDelegate {
+extension QuestionsListController: HTTPClientDelegate {
     func requestCompleted(data: Data) {
         decodeAnswer(data: data)
         tableDataSource = TableDataSource(response: response)
@@ -108,7 +108,7 @@ extension ViewController: HTTPClientDelegate {
 }
 
 
-extension ViewController: UITableViewDelegate {
+extension QuestionsListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let urlString = response?.items[indexPath.row].link else {
             return
@@ -123,7 +123,7 @@ extension ViewController: UITableViewDelegate {
 }
 
 
-extension ViewController: SettingsTableDelegate {
+extension QuestionsListController: SettingsTableDelegate {
     func settingsChanged(request: StackoverflowRequest) {
         soRequest = request
         loadData(url: request.url)

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableController: UITableViewController {
     
     @IBOutlet weak var sortByTextField: UITextField!
     @IBOutlet weak var sortOrderTextField: UITextField!
@@ -67,10 +67,13 @@ class SettingsTableViewController: UITableViewController {
         tagTextField.text = soRequestLocalCopy.tag != "" ? soRequestLocalCopy.tag : "None"
         quotaRemainingTextField.text = String(quotaRemaining)
         quotaMaxTextField.text = String(quotaMax)
-        guard let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
-            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String
-            else {return}
-        appVersionTextField.text = String(version + " build " + build)
+        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String,
+            let build = Bundle.main.infoDictionary?["CFBundleVersion"] as? String {
+            appVersionTextField.text = String(version + " build " + build)
+        } else {
+            appVersionTextField.text = ""
+        }
+        
     }
     
     
@@ -151,7 +154,7 @@ class SettingsTableViewController: UITableViewController {
 }
 
 
-extension SettingsTableViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+extension SettingsTableController: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }

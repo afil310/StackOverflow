@@ -15,14 +15,14 @@
 		5542288E22211B9500823775 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 5542288C22211B9500823775 /* Settings.png */; };
 		5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */ = {isa = PBXBuildFile; fileRef = 5545C60921FF4EC5009F4425 /* UITableView.png */; };
 		559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */; };
-		559A9E8C21FDCC8D00DBB617 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8B21FDCC8D00DBB617 /* ViewController.swift */; };
+		559A9E8C21FDCC8D00DBB617 /* QuestionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8B21FDCC8D00DBB617 /* QuestionsListController.swift */; };
 		559A9E8F21FDCC8D00DBB617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559A9E8D21FDCC8D00DBB617 /* Main.storyboard */; };
 		559A9E9121FDCC8F00DBB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559A9E9021FDCC8F00DBB617 /* Assets.xcassets */; };
 		559A9E9421FDCC8F00DBB617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559A9E9221FDCC8F00DBB617 /* LaunchScreen.storyboard */; };
 		559A9E9C21FDCDFA00DBB617 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */; };
 		55A8478F221CF34C007EF49B /* PickerClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8478E221CF34C007EF49B /* PickerClasses.swift */; };
 		55AE3D4B221AB34E00A2293C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AE3D4A221AB34E00A2293C /* Settings.storyboard */; };
-		55AE3D4E221AD85400A2293C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE3D4D221AD85400A2293C /* SettingsTableViewController.swift */; };
+		55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE3D4D221AD85400A2293C /* SettingsTableController.swift */; };
 		55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */; };
 		55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0898121FE90C400B0F42E /* HTTPClient.swift */; };
 		55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */; };
@@ -38,7 +38,7 @@
 		5545C60921FF4EC5009F4425 /* UITableView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableView.png; sourceTree = "<group>"; };
 		559A9E8621FDCC8D00DBB617 /* StackOverflowQuestions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflowQuestions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		559A9E8B21FDCC8D00DBB617 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		559A9E8B21FDCC8D00DBB617 /* QuestionsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListController.swift; sourceTree = "<group>"; };
 		559A9E8E21FDCC8D00DBB617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		559A9E9021FDCC8F00DBB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		559A9E9321FDCC8F00DBB617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		55A8478E221CF34C007EF49B /* PickerClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerClasses.swift; sourceTree = "<group>"; };
 		55AE3D4A221AB34E00A2293C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
-		55AE3D4D221AD85400A2293C /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		55AE3D4D221AD85400A2293C /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowRequest.swift; sourceTree = "<group>"; };
 		55C0898121FE90C400B0F42E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
@@ -108,8 +108,8 @@
 		55422885221FB9BD00823775 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				559A9E8B21FDCC8D00DBB617 /* ViewController.swift */,
-				55AE3D4D221AD85400A2293C /* SettingsTableViewController.swift */,
+				559A9E8B21FDCC8D00DBB617 /* QuestionsListController.swift */,
+				55AE3D4D221AD85400A2293C /* SettingsTableController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -293,13 +293,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				559A9E9C21FDCDFA00DBB617 /* ResponseModel.swift in Sources */,
-				559A9E8C21FDCC8D00DBB617 /* ViewController.swift in Sources */,
+				559A9E8C21FDCC8D00DBB617 /* QuestionsListController.swift in Sources */,
 				55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */,
 				55D9220921FEA41C00F8A0A6 /* QuestionCell.swift in Sources */,
 				55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */,
 				55A8478F221CF34C007EF49B /* PickerClasses.swift in Sources */,
 				559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */,
-				55AE3D4E221AD85400A2293C /* SettingsTableViewController.swift in Sources */,
+				55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */,
 				55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
