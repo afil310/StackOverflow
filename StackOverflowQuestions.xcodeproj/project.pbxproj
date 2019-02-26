@@ -89,7 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */,
-				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
 				559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */,
 				55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */,
 			);
@@ -146,7 +145,8 @@
 		559A9E8821FDCC8D00DBB617 /* StackOverflowQuestions */ = {
 			isa = PBXGroup;
 			children = (
-				559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */,
+				55BC97DD22256A5E0043C2B8 /* Views */,
+				55BC97DE22256A760043C2B8 /* Application */,
 				559A9E9021FDCC8F00DBB617 /* Assets.xcassets */,
 				55422883221FB92C00823775 /* Models */,
 				55422884221FB98A00823775 /* Networking */,
@@ -168,6 +168,22 @@
 				559A9E9221FDCC8F00DBB617 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		55BC97DD22256A5E0043C2B8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55BC97DE22256A760043C2B8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

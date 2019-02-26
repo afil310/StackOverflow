@@ -31,13 +31,13 @@ class QuestionsListController: UIViewController {
     func setupNavigationBar() {
         let settingsBarButtonItem = UIBarButtonItem(image: UIImage(named: "Settings"),
                                                     style: .plain, target: self,
-                                                    action: #selector(settingsTapped))
+                                                    action: #selector(presentSettingsPage))
         navigationItem.rightBarButtonItem = settingsBarButtonItem
         navigationItem.title = "Questions"
     }
     
     
-    @objc func settingsTapped() {
+    @objc func presentSettingsPage() {
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
         
         guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsTable") as? SettingsTableController else {
@@ -59,25 +59,10 @@ class QuestionsListController: UIViewController {
     }
     
     
-    func printServiceInfo() {
-        guard let response = self.response else {
-            return
-        }
-        print("---------------------------")
-        print("Questions downloaded: \(String(describing: response.items.count))")
-        print("Quota: \(String(describing: response.quota_max)), remained: \(String(describing: response.quota_remaining))")
-        print("---------------------------")
-        for item in response.items {
-            print(item.title, item.tags)
-        }
-    }
-    
-    
-    func decodeAnswer(data: Data) {
+    func decodeResponse(data: Data) {
         do {
             let decoder = JSONDecoder()
             self.response = try decoder.decode(Response.self, from: data)
-//            printServiceInfo()
         } catch let error {
             print("Data decoding error:", error)
         }
@@ -87,10 +72,10 @@ class QuestionsListController: UIViewController {
 
 extension QuestionsListController: HTTPClientDelegate {
     func requestCompleted(data: Data) {
-        decodeAnswer(data: data)
+        decodeResponse(data: data)
         tableDataSource = TableDataSource(response: response)
+        tableView.dataSource = tableDataSource
         DispatchQueue.main.async {
-            self.tableView.dataSource = self.tableDataSource
             self.tableView.reloadData()
         }
     }

@@ -9,7 +9,6 @@
 import Foundation
 
 class HTTPClient: NSObject {
-    var configuration: URLSessionConfiguration?
     lazy var session: URLSession = {
         let configuration = URLSessionConfiguration.default
         return URLSession(configuration: configuration,
@@ -17,14 +16,13 @@ class HTTPClient: NSObject {
                           delegateQueue: OperationQueue.main)
     }()
     var task: URLSessionDataTask?
-    private var data = NSMutableData()
+    private var data = Data()
     private var expectedContentLength = Int64(0)
     weak var httpClientDelegate: HTTPClientDelegate?
     
 
     init(url: URL? = nil) {
         super.init()
-        task?.cancel()
         if url != nil {
             task = session.dataTask(with: url!)
         }
@@ -43,7 +41,7 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
                     didCompleteWithError error: Error?) {
         httpClientDelegate?.dataTaskProgress(progress: 1.0)
         if error == nil {
-            httpClientDelegate?.requestCompleted(data: data as Data)
+            httpClientDelegate?.requestCompleted(data: data)
         } else {
             print("Error getting data from server", error as? String ?? "")
         }
@@ -54,7 +52,7 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
                     dataTask: URLSessionDataTask,
                     didReceive data: Data) {
         self.data.append(data)
-        let progress = Float(self.data.length) / Float(expectedContentLength)
+        let progress = Float(self.data.count) / Float(expectedContentLength)
         httpClientDelegate?.dataTaskProgress(progress: progress)
     }
     

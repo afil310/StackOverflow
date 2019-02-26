@@ -25,12 +25,14 @@ class SettingsTableController: UITableViewController {
     var quotaMax = 0
     var quotaRemaining = 0
     weak var delegate: SettingsTableDelegate?
+    var fromDatePicker: UIDatePicker?
+    var toDatePicker: UIDatePicker?
     
     enum Parameter {
         static let sortBy = "sortBy"
         static let sortOrder = "sortOrder"
-        static let fromDate = ""
-        static let toDate = ""
+        static let fromDate = "fromDate"
+        static let toDate = "toDate"
         static let tag = "tag"
     }
     
@@ -99,9 +101,12 @@ class SettingsTableController: UITableViewController {
             createPicker(parameterName: Parameter.sortOrder, currentValue: soRequestLocalCopy.sortOrder)
         case 4:
             createPicker(parameterName: Parameter.tag, currentValue: soRequestLocalCopy.tag)
-        case 2, 3:
-            //implement date picker here
-            return
+        case 2:
+            let fromDate = Date(timeIntervalSince1970: TimeInterval(soRequestLocalCopy.fromDate))
+            createDatePicker(parameterName: Parameter.fromDate, currentValue: fromDate)
+        case 3:
+            let toDate = Date(timeIntervalSince1970: TimeInterval(soRequestLocalCopy.toDate))
+            createDatePicker(parameterName: Parameter.toDate, currentValue: toDate)
         default:
             return
         }
@@ -124,6 +129,21 @@ class SettingsTableController: UITableViewController {
     }
     
     
+    func createDatePicker(parameterName: String, currentValue: Date) {
+        let picker = DatePicker()
+        picker.date = currentValue
+        if parameterName == Parameter.fromDate {
+            fromDatePicker = picker
+        } else {
+            toDatePicker = picker
+        }
+        let dummyTextField = UITextField(frame: CGRect.zero)
+        view.addSubview(dummyTextField)
+        createPickerToolbar(dummyTextField)
+        dummyTextField.inputView = picker
+        dummyTextField.becomeFirstResponder()
+    }
+    
     func createPickerToolbar(_ textField: UITextField) {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
@@ -138,15 +158,30 @@ class SettingsTableController: UITableViewController {
     
     
     @objc func doneChoosingParameter() {
+        if fromDatePicker != nil {
+            soRequestLocalCopy.fromDate = Int(fromDatePicker!.date.timeIntervalSince1970)
+            if soRequestLocalCopy.toDate <= soRequestLocalCopy.fromDate {
+                soRequestLocalCopy.toDate = soRequestLocalCopy.fromDate
+            }
+        }
+        if toDatePicker != nil {
+            soRequestLocalCopy.toDate = Int(toDatePicker!.date.timeIntervalSince1970)
+            if soRequestLocalCopy.fromDate >= soRequestLocalCopy.toDate {
+                soRequestLocalCopy.fromDate = soRequestLocalCopy.toDate
+            }
+        }
+
         setupTableValues()
         view.endEditing(true)
+        fromDatePicker = nil
+        toDatePicker = nil
     }
     
     
     func persistRequestParameters(soRequestLocalCopy: StackoverflowRequest) {
         let defaults = UserDefaults.standard
-        defaults.set(soRequestLocalCopy.toDate, forKey: "toDate")
-        defaults.set(soRequestLocalCopy.fromDate, forKey: "fromDate")
+//        defaults.set(soRequestLocalCopy.toDate, forKey: "toDate")
+//        defaults.set(soRequestLocalCopy.fromDate, forKey: "fromDate")
         defaults.set(soRequestLocalCopy.sortOrder, forKey: "sortOrder")
         defaults.set(soRequestLocalCopy.sortBy, forKey: "sortBy")
         defaults.set(soRequestLocalCopy.tag, forKey: "tag")
@@ -181,7 +216,6 @@ extension SettingsTableController: UIPickerViewDelegate, UIPickerViewDataSource 
             return
         }
         let selectedValue = picker.componentValues[row]
-        
         switch picker.parameterName {
         case Parameter.sortBy:
             soRequestLocalCopy.sortBy = selectedValue
@@ -189,12 +223,6 @@ extension SettingsTableController: UIPickerViewDelegate, UIPickerViewDataSource 
             soRequestLocalCopy.sortOrder = selectedValue
         case Parameter.tag:
             soRequestLocalCopy.tag = selectedValue != "None" ? selectedValue : ""
-        case Parameter.fromDate:
-//            soRequest?.fromDate = selectedValue
-            return
-        case Parameter.toDate:
-//            soRequest?.toDate = selectedValue
-            return
         default:
             return
         }

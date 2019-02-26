@@ -43,18 +43,11 @@ struct StackoverflowRequest: Equatable {
     }
     
     mutating func initRequestParameters() {
-        
         let defaults = UserDefaults.standard
         sortOrder = defaults.string(forKey: "sortOrder") ?? "desc"
         sortBy = defaults.string(forKey: "sortBy") ?? "votes"
-        toDate = defaults.integer(forKey: "toDate")
-        if toDate == 0 {
-            toDate = Int(Date().timeIntervalSince1970) //now
-        }
-        fromDate = defaults.integer(forKey: "fromDate")
-        if fromDate == 0 {
-            fromDate = toDate - 86400 * 30 //one month ago
-        }
+        toDate = Int(Date().timeIntervalSince1970) //now
+        fromDate = toDate - 86400 * 7 //one week ago
         tag = defaults.string(forKey: "tag") ?? ""
     }
     
