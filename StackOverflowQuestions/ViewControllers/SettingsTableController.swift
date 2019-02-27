@@ -1,5 +1,5 @@
 //
-//  SettingsTableTableViewController.swift
+//  SettingsTableController.swift
 //  StackOverflowQuestions
 //
 //  Created by Andrey Filonov on 19/02/2019.

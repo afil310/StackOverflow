@@ -11,6 +11,7 @@ import Foundation
 class HTTPClient: NSObject {
     lazy var session: URLSession = {
         let configuration = URLSessionConfiguration.default
+        configuration.waitsForConnectivity = true
         return URLSession(configuration: configuration,
                           delegate: self,
                           delegateQueue: OperationQueue.main)

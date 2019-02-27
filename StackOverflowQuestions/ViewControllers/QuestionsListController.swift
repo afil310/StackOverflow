@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  QuestionsListController.swift
 //  StackOverflowQuestions
 //
 //  Created by Andrey Filonov on 28/01/2019.
@@ -17,14 +17,28 @@ class QuestionsListController: UIViewController {
     var response: Response?
     var tableDataSource: TableDataSource?
     var soRequest = StackoverflowRequest()
+    let reachability = Reachability()!
+    let networkBar = NetworkBar()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        setupNetworkBar()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
         loadData(url: soRequest.url)
+    }
+    
+    
+    @objc func reachabilityChanged(note: Notification) {
+        guard let reachability = note.object as? Reachability else {return}
+        switch reachability.connection {
+        case .wifi, .cellular:
+            networkBar.hide(color: UIColor(red: 95/255, green: 186/255, blue: 125/255, alpha: 1.0), message: "Internet is available")
+        case .none:
+            networkBar.show(color: .red, message: "Internet is not available")
+        }
     }
     
     
@@ -66,6 +80,22 @@ class QuestionsListController: UIViewController {
         } catch let error {
             print("Data decoding error:", error)
         }
+    }
+    
+    
+    func setupNetworkBar() {
+        NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
+        networkBar.translatesAutoresizingMaskIntoConstraints = false
+        networkBar.isUserInteractionEnabled = false
+        view.addSubview(networkBar)
+        NSLayoutConstraint.activate([networkBar.widthAnchor.constraint(equalTo: view.widthAnchor),
+                                     networkBar.topAnchor.constraint(equalTo: progressView.topAnchor)
+            ])
     }
 }
 

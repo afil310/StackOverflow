@@ -24,9 +24,11 @@
 		55AE3D4B221AB34E00A2293C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AE3D4A221AB34E00A2293C /* Settings.storyboard */; };
 		55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE3D4D221AD85400A2293C /* SettingsTableController.swift */; };
 		55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */; };
+		55BC97E0222664450043C2B8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC97DF222664450043C2B8 /* Reachability.swift */; };
 		55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0898121FE90C400B0F42E /* HTTPClient.swift */; };
 		55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */; };
 		55D9220921FEA41C00F8A0A6 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */; };
+		55F156842226A7CB00EC2CD9 /* NetworkBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F156832226A7CB00EC2CD9 /* NetworkBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,9 +50,11 @@
 		55AE3D4A221AB34E00A2293C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		55AE3D4D221AD85400A2293C /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowRequest.swift; sourceTree = "<group>"; };
+		55BC97DF222664450043C2B8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		55C0898121FE90C400B0F42E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		55F156832226A7CB00EC2CD9 /* NetworkBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBar.swift; sourceTree = "<group>"; };
 		5AC849C13AF5F7C3B15BCD09 /* Pods_StackOverflowQuestions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowQuestions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3ED71D56998CBB837C6E189 /* Pods-StackOverflowQuestions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowQuestions.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowQuestions/Pods-StackOverflowQuestions.release.xcconfig"; sourceTree = "<group>"; };
 		C237E2DD2368EB5FB9EA46F1 /* Pods-StackOverflowQuestions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowQuestions.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowQuestions/Pods-StackOverflowQuestions.debug.xcconfig"; sourceTree = "<group>"; };
@@ -100,6 +104,7 @@
 			children = (
 				55C0898121FE90C400B0F42E /* HTTPClient.swift */,
 				55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */,
+				55BC97DF222664450043C2B8 /* Reachability.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -145,12 +150,12 @@
 		559A9E8821FDCC8D00DBB617 /* StackOverflowQuestions */ = {
 			isa = PBXGroup;
 			children = (
-				55BC97DD22256A5E0043C2B8 /* Views */,
 				55BC97DE22256A760043C2B8 /* Application */,
 				559A9E9021FDCC8F00DBB617 /* Assets.xcassets */,
 				55422883221FB92C00823775 /* Models */,
 				55422884221FB98A00823775 /* Networking */,
 				55AE3D4C221AB35D00A2293C /* Storyboards */,
+				55BC97DD22256A5E0043C2B8 /* Views */,
 				55422885221FB9BD00823775 /* ViewControllers */,
 				55422881221FB2BB00823775 /* .swiftlint.yml */,
 				559A9E9521FDCC8F00DBB617 /* Info.plist */,
@@ -174,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
+				55F156832226A7CB00EC2CD9 /* NetworkBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -316,7 +322,9 @@
 				55A8478F221CF34C007EF49B /* PickerClasses.swift in Sources */,
 				559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */,
 				55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */,
+				55BC97E0222664450043C2B8 /* Reachability.swift in Sources */,
 				55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */,
+				55F156842226A7CB00EC2CD9 /* NetworkBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
