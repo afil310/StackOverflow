@@ -31,7 +31,7 @@ class TableDataSource: NSObject, UITableViewDataSource {
         
         setupCell(cell)
         
-        cell.questionTitle.text = question.title
+        cell.questionTitle.text = question.title.htmlToString ?? question.title
         cell.votesCount.text = String(question.score)
         cell.answersCount.text = String(question.answer_count)
         
@@ -79,5 +79,21 @@ class TableDataSource: NSObject, UITableViewDataSource {
         
         let date = NSDate(timeIntervalSince1970: TimeInterval(unixdate))
         return dayTimePeriodFormatter.string(from: date as Date)
+    }
+}
+
+
+extension String {
+    /// Converts HTML string to a `String?`
+    
+    var htmlToString: String? {
+        guard let decodedString = try? NSAttributedString(data: Data(utf8),
+                                                          options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue],
+                                                          documentAttributes: nil)
+            else {
+                return nil
+            }
+        return decodedString.string
+        
     }
 }
