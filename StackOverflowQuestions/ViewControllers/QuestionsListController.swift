@@ -24,6 +24,7 @@ class QuestionsListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
+        setupSearchBar()
         setupNetworkBar()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
@@ -40,14 +41,27 @@ class QuestionsListController: UIViewController {
             networkBar.show(color: .red, message: "Internet is not available")
         }
     }
-    
+
     
     func setupNavigationBar() {
-        let settingsBarButtonItem = UIBarButtonItem(image: UIImage(named: "Settings"),
+        let settingsBarButtonItem = UIBarButtonItem(image: UIImage(named: "Filter"),
                                                     style: .plain, target: self,
                                                     action: #selector(presentSettingsPage))
         navigationItem.rightBarButtonItem = settingsBarButtonItem
         navigationItem.title = "Questions"
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationController?.navigationBar.prefersLargeTitles = true
+    }
+    
+    
+    func setupSearchBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Stackoverflow"
+        searchController.hidesNavigationBarDuringPresentation = false
+        definesPresentationContext = true
+        navigationItem.searchController = searchController
     }
     
     
@@ -133,7 +147,9 @@ extension QuestionsListController: UITableViewDelegate {
             return
         }
         let safariVC = SFSafariViewController(url: url)
-        present(safariVC, animated: true)
+        safariVC.navigationItem.largeTitleDisplayMode = .never
+        safariVC.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(safariVC, animated: true)
     }
 }
 
@@ -142,5 +158,25 @@ extension QuestionsListController: SettingsTableDelegate {
     func settingsChanged(request: StackoverflowRequest) {
         soRequest = request
         loadData(url: request.url)
+    }
+}
+
+
+extension QuestionsListController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let query = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {return}
+        print("query:", query)
+        soRequest.query = query
+        if query.count > 0 {
+            loadData(url: soRequest.url)
+            navigationController?.navigationBar.isHidden = false
+        }
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        // If the Cancel button clicked, then reload questions list
+        soRequest.query = ""
+        loadData(url: soRequest.url)
     }
 }

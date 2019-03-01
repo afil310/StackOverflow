@@ -14,7 +14,8 @@ struct StackoverflowRequest: Equatable {
     
     let domain = "https://api.stackexchange.com"
     let version = "2.2"
-    let requestType = "questions?"
+    let questionsRequest = "questions?"
+    let searchRequest = "search/advanced?"
     var toDate = 0
     var fromDate = 0
     var pageSize = 100
@@ -23,8 +24,10 @@ struct StackoverflowRequest: Equatable {
 //    var sortMinValue = 10
     var tag = "" //TODO: implement an array of tags
     var site = "stackoverflow"
+    var query = ""
     
     var url: URL? {
+        let requestType = query == "" ? questionsRequest : searchRequest
         var urlString = domain + "/" + version + "/" + requestType
         urlString += "pagesize=" + String(pageSize)
         urlString += "&fromdate=" + String(fromDate)
@@ -33,9 +36,10 @@ struct StackoverflowRequest: Equatable {
         urlString += "&order=" + sortOrder
 //        urlString += "&min=" + String(sortMinValue)
         urlString += "&tagged=" + tag
+        urlString += "&q=" + query
         urlString += "&site=" + site
         print("Stackoverflow urlString:", urlString)
-        return URL(string: urlString)
+        return URL(string: urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) ?? "")
     }
     
     init() {
