@@ -26,7 +26,7 @@
 		55BC97E0222664450043C2B8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC97DF222664450043C2B8 /* Reachability.swift */; };
 		55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0898121FE90C400B0F42E /* HTTPClient.swift */; };
 		55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */; };
-		55D9220921FEA41C00F8A0A6 /* QuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */; };
+		55D9220921FEA41C00F8A0A6 /* QuestionsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */; };
 		55F156842226A7CB00EC2CD9 /* NetworkBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F156832226A7CB00EC2CD9 /* NetworkBar.swift */; };
 		A3C79D56E0124B0895D55409 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3D0C28D4C635C4B9F3A8E9 /* Pods_StackOverflow.framework */; };
 /* End PBXBuildFile section */
@@ -53,7 +53,7 @@
 		55BC97DF222664450043C2B8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		55C0898121FE90C400B0F42E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
-		55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCell.swift; sourceTree = "<group>"; };
+		55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListCell.swift; sourceTree = "<group>"; };
 		55F156832226A7CB00EC2CD9 /* NetworkBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkBar.swift; sourceTree = "<group>"; };
 		5AC849C13AF5F7C3B15BCD09 /* Pods_StackOverflowQuestions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflowQuestions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D3D0C28D4C635C4B9F3A8E9 /* Pods_StackOverflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StackOverflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +96,6 @@
 			children = (
 				55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */,
 				559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */,
-				55D9220821FEA41C00F8A0A6 /* QuestionCell.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,8 +179,9 @@
 		55BC97DD22256A5E0043C2B8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
 				55F156832226A7CB00EC2CD9 /* NetworkBar.swift */,
+				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
+				55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 				559A9E9C21FDCDFA00DBB617 /* ResponseModel.swift in Sources */,
 				559A9E8C21FDCC8D00DBB617 /* QuestionsListController.swift in Sources */,
 				55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */,
-				55D9220921FEA41C00F8A0A6 /* QuestionCell.swift in Sources */,
+				55D9220921FEA41C00F8A0A6 /* QuestionsListCell.swift in Sources */,
 				55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */,
 				55A8478F221CF34C007EF49B /* PickerClasses.swift in Sources */,
 				559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */,

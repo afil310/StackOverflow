@@ -1,6 +1,6 @@
 //
 //  NetworkBar.swift
-//  StackOverflowQuestions
+//  StackOverflow
 //
 //  Created by Andrey Filonov on 27/02/2019.
 //  Copyright © 2019 Andrey Filonov. All rights reserved.

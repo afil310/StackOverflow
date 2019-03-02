@@ -1,6 +1,6 @@
 //
 //  QuestionsListController.swift
-//  StackOverflowQuestions
+//  StackOverflow
 //
 //  Created by Andrey Filonov on 28/01/2019.
 //  Copyright © 2019 Andrey Filonov. All rights reserved.
@@ -87,16 +87,6 @@ class QuestionsListController: UIViewController {
     }
     
     
-    func decodeResponse(data: Data) {
-        do {
-            let decoder = JSONDecoder()
-            self.response = try decoder.decode(Response.self, from: data)
-        } catch let error {
-            print("Data decoding error:", error)
-        }
-    }
-    
-    
     func setupNetworkBar() {
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
@@ -115,8 +105,8 @@ class QuestionsListController: UIViewController {
 
 
 extension QuestionsListController: HTTPClientDelegate {
-    func requestCompleted(data: Data) {
-        decodeResponse(data: data)
+    func requestCompleted(response: Response?) {
+        self.response = response
         tableDataSource = TableDataSource(response: response)
         tableView.dataSource = tableDataSource
         DispatchQueue.main.async {
@@ -139,7 +129,8 @@ extension QuestionsListController: HTTPClientDelegate {
 
 extension QuestionsListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let urlString = response?.items[indexPath.row].link else {
+        guard response?.items.count != 0,
+            let urlString = response?.items[indexPath.row].link else {
             return
         }
         guard let url = URL(string: urlString) else {

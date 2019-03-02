@@ -1,6 +1,6 @@
 //
 //  TableDataSource.swift
-//  StackOverflowQuestions
+//  StackOverflow
 //
 //  Created by Andrey Filonov on 28/01/2019.
 //  Copyright © 2019 Andrey Filonov. All rights reserved.
@@ -19,17 +19,27 @@ class TableDataSource: NSObject, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return response?.items.count ?? 0
+        guard let response = self.response else {
+            return 0
+        }
+        return response.items.count == 0 ? 1 : response.items.count
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionCell,
-            let question = response?.items[indexPath.row] else {
-            return UITableViewCell()
+        
+        if response?.items.count == 0 {
+            let cell = EmptyResultCell()
+            return cell
         }
         
-        setupCell(cell)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionCell,
+            let question = response?.items[indexPath.row]
+            else {
+                return UITableViewCell()
+        }
+        
+        cell.setup()
         
         cell.questionTitle.text = question.title.htmlToString ?? question.title
         cell.votesCount.text = String(question.score)
@@ -58,15 +68,15 @@ class TableDataSource: NSObject, UITableViewDataSource {
     }
     
     
-    func setupCell(_ cell: QuestionCell) {
-        let backgroundView = UIView()
-        backgroundView.backgroundColor = UIColor(red: 0.5647, green: 0.8196, blue: 0.9765, alpha: 1.0)
-        backgroundView.layer.cornerRadius = cell.cellView.frame.height / 10
-        
-        cell.selectedBackgroundView = backgroundView
-        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 10
-        cell.cellView.layer.backgroundColor = UIColor(red: 0.87, green: 0.95, blue: 0.99, alpha: 1.0).cgColor
-    }
+//    func setupCell(_ cell: QuestionCell) {
+//        let backgroundView = UIView()
+//        backgroundView.backgroundColor = UIColor(red: 0.5647, green: 0.8196, blue: 0.9765, alpha: 1.0)
+//        backgroundView.layer.cornerRadius = cell.cellView.frame.height / 10
+//
+//        cell.selectedBackgroundView = backgroundView
+//        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 10
+//        cell.cellView.layer.backgroundColor = UIColor(red: 0.87, green: 0.95, blue: 0.99, alpha: 1.0).cgColor
+//    }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -1,6 +1,6 @@
 //
 //  HTTPClient.swift
-//  StackOverflowQuestions
+//  StackOverflow
 //
 //  Created by Andrey Filonov on 28/01/2019.
 //  Copyright © 2019 Andrey Filonov. All rights reserved.
@@ -36,13 +36,26 @@ class HTTPClient: NSObject {
 }
 
 
+func decodeResponse(data: Data) -> Response? {
+    var decodedResponse: Response?
+    do {
+        let decoder = JSONDecoder()
+        decodedResponse = try decoder.decode(Response.self, from: data)
+    } catch let error {
+        print("Response decoding error:", error)
+        return nil
+    }
+    return decodedResponse
+}
+
+
 extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
     func urlSession(_ session: URLSession,
                     task: URLSessionTask,
                     didCompleteWithError error: Error?) {
         httpClientDelegate?.dataTaskProgress(progress: 1.0)
         if error == nil {
-            httpClientDelegate?.requestCompleted(data: data)
+            httpClientDelegate?.requestCompleted(response: decodeResponse(data: data))
         } else {
             print("Error getting data from server", error as? String ?? "")
         }
@@ -76,6 +89,6 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
 
 
 protocol HTTPClientDelegate: AnyObject {
-    func requestCompleted(data: Data)
+    func requestCompleted(response: Response?)
     func dataTaskProgress(progress: Float)
 }
