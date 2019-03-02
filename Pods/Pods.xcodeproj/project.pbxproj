@@ -7,45 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05346A036BCD93B1495F975FF9935C20 /* Pods-StackOverflowQuestions-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 310C7B0CBC1FC8EBA638E60AD8D0FE18 /* Pods-StackOverflowQuestions-dummy.m */; };
-		A1A83BBEDEF2771578D5D101DD8898A5 /* Pods-StackOverflowQuestions-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0FF191245C57FAF30449A686BCBAF8B4 /* Pods-StackOverflowQuestions-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EBD96F056AFF910BA7D2A31F1F1DD906 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		7CF4808A862C59F0F095C77A6D5E75E1 /* Pods-StackOverflow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74B145283BF3B6F2B980F7C94458E9B0 /* Pods-StackOverflow-dummy.m */; };
+		9DAAE859522DA4CF8EA0709C04FDC8FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
+		EBF105CC189CFF3244D908ED8399A2C1 /* Pods-StackOverflow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 95C0F3517DBF21FF4C268A9C0EFC7E2E /* Pods-StackOverflow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0982695A1EF0BFBFF7D5B132806E37C8 /* Pods_StackOverflowQuestions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StackOverflowQuestions.framework; path = "Pods-StackOverflowQuestions.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		0FF191245C57FAF30449A686BCBAF8B4 /* Pods-StackOverflowQuestions-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StackOverflowQuestions-umbrella.h"; sourceTree = "<group>"; };
-		1B18F6F28595CE0AC6ED75F15D5D0926 /* Pods-StackOverflowQuestions.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StackOverflowQuestions.modulemap"; sourceTree = "<group>"; };
-		1E29769BD7262ACC3AB86F9747A829E4 /* Pods-StackOverflowQuestions-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StackOverflowQuestions-acknowledgements.plist"; sourceTree = "<group>"; };
-		310C7B0CBC1FC8EBA638E60AD8D0FE18 /* Pods-StackOverflowQuestions-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StackOverflowQuestions-dummy.m"; sourceTree = "<group>"; };
-		4052F12EB296EC87D78985B0038FE528 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4B15FADD2BBFBC65D6C8CC0CAECA5ABC /* Pods-StackOverflowQuestions-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StackOverflowQuestions-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4BD656C33299896D31D3539D06BFB801 /* Pods-StackOverflowQuestions.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StackOverflowQuestions.debug.xcconfig"; sourceTree = "<group>"; };
-		5020994149CD3D3E3AECBFF724593E9B /* Pods-StackOverflowQuestions-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StackOverflowQuestions-frameworks.sh"; sourceTree = "<group>"; };
+		329BBD491316B2FA6DC36C42FE3D8293 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F56B3BEB9C0680FE56D66668ABFC301 /* Pods-StackOverflow-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StackOverflow-resources.sh"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6A8FB856B1DC6609E5D0380B62721206 /* Pods-StackOverflowQuestions-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StackOverflowQuestions-resources.sh"; sourceTree = "<group>"; };
+		70ABFE25BD8CC2DB19E16AC0216F7439 /* Pods-StackOverflow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StackOverflow.modulemap"; sourceTree = "<group>"; };
+		74B145283BF3B6F2B980F7C94458E9B0 /* Pods-StackOverflow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StackOverflow-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		E1757557834599D6D943E580B97ECE5B /* Pods-StackOverflowQuestions.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StackOverflowQuestions.release.xcconfig"; sourceTree = "<group>"; };
+		95C0F3517DBF21FF4C268A9C0EFC7E2E /* Pods-StackOverflow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StackOverflow-umbrella.h"; sourceTree = "<group>"; };
+		9DAF18F2C2331F08227789EDDFBA85F8 /* Pods-StackOverflow-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StackOverflow-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A1FA2A94A32B40B8546BB9643F21C5A1 /* Pods-StackOverflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StackOverflow.debug.xcconfig"; sourceTree = "<group>"; };
+		B383ED02FB2B3F91E450C5C33BF7B4A0 /* Pods-StackOverflow-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StackOverflow-acknowledgements.plist"; sourceTree = "<group>"; };
+		C2C874AB1F832784B8BC4D9809318323 /* Pods_StackOverflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StackOverflow.framework; path = "Pods-StackOverflow.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCC0CC47703B28D0FC93D4FA9DFF035E /* Pods-StackOverflow-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StackOverflow-frameworks.sh"; sourceTree = "<group>"; };
+		E2709DE9DE244523DD23373DC322EC11 /* Pods-StackOverflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StackOverflow.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5163B2C121AEDAF441E55B6D1CE87DDE /* Frameworks */ = {
+		1A017CB9B3BA115592F47A4C086CE3DC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBD96F056AFF910BA7D2A31F1F1DD906 /* Foundation.framework in Frameworks */,
+				9DAAE859522DA4CF8EA0709C04FDC8FA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		126BE60C6FF3B47C103CA2BA1D5DC8E3 /* Products */ = {
+		2FED8D89111F3D4EB950B2D84D5C0EBE /* Pods-StackOverflow */ = {
 			isa = PBXGroup;
 			children = (
-				0982695A1EF0BFBFF7D5B132806E37C8 /* Pods_StackOverflowQuestions.framework */,
+				329BBD491316B2FA6DC36C42FE3D8293 /* Info.plist */,
+				70ABFE25BD8CC2DB19E16AC0216F7439 /* Pods-StackOverflow.modulemap */,
+				9DAF18F2C2331F08227789EDDFBA85F8 /* Pods-StackOverflow-acknowledgements.markdown */,
+				B383ED02FB2B3F91E450C5C33BF7B4A0 /* Pods-StackOverflow-acknowledgements.plist */,
+				74B145283BF3B6F2B980F7C94458E9B0 /* Pods-StackOverflow-dummy.m */,
+				CCC0CC47703B28D0FC93D4FA9DFF035E /* Pods-StackOverflow-frameworks.sh */,
+				4F56B3BEB9C0680FE56D66668ABFC301 /* Pods-StackOverflow-resources.sh */,
+				95C0F3517DBF21FF4C268A9C0EFC7E2E /* Pods-StackOverflow-umbrella.h */,
+				A1FA2A94A32B40B8546BB9643F21C5A1 /* Pods-StackOverflow.debug.xcconfig */,
+				E2709DE9DE244523DD23373DC322EC11 /* Pods-StackOverflow.release.xcconfig */,
 			);
-			name = Products;
+			name = "Pods-StackOverflow";
+			path = "Target Support Files/Pods-StackOverflow";
 			sourceTree = "<group>";
 		};
 		32A23E08346748F1793F899C5FF672C1 /* SwiftLint */ = {
@@ -70,8 +80,8 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				9758CC519AE2C57A9659FFC01AAD26F9 /* Pods */,
-				126BE60C6FF3B47C103CA2BA1D5DC8E3 /* Products */,
-				BCF0688DDDAE8DC20829266930795E49 /* Targets Support Files */,
+				CD6887EB661882A1CE9CAF0F5214F1DD /* Products */,
+				A33FEE95B5A8EB2CC8B92480331E26E7 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,22 +93,12 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		B4A511E216C55D7CBC45C4EB24922C64 /* Pods-StackOverflowQuestions */ = {
+		A33FEE95B5A8EB2CC8B92480331E26E7 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				4052F12EB296EC87D78985B0038FE528 /* Info.plist */,
-				1B18F6F28595CE0AC6ED75F15D5D0926 /* Pods-StackOverflowQuestions.modulemap */,
-				4B15FADD2BBFBC65D6C8CC0CAECA5ABC /* Pods-StackOverflowQuestions-acknowledgements.markdown */,
-				1E29769BD7262ACC3AB86F9747A829E4 /* Pods-StackOverflowQuestions-acknowledgements.plist */,
-				310C7B0CBC1FC8EBA638E60AD8D0FE18 /* Pods-StackOverflowQuestions-dummy.m */,
-				5020994149CD3D3E3AECBFF724593E9B /* Pods-StackOverflowQuestions-frameworks.sh */,
-				6A8FB856B1DC6609E5D0380B62721206 /* Pods-StackOverflowQuestions-resources.sh */,
-				0FF191245C57FAF30449A686BCBAF8B4 /* Pods-StackOverflowQuestions-umbrella.h */,
-				4BD656C33299896D31D3539D06BFB801 /* Pods-StackOverflowQuestions.debug.xcconfig */,
-				E1757557834599D6D943E580B97ECE5B /* Pods-StackOverflowQuestions.release.xcconfig */,
+				2FED8D89111F3D4EB950B2D84D5C0EBE /* Pods-StackOverflow */,
 			);
-			name = "Pods-StackOverflowQuestions";
-			path = "Target Support Files/Pods-StackOverflowQuestions";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -109,44 +109,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BCF0688DDDAE8DC20829266930795E49 /* Targets Support Files */ = {
+		CD6887EB661882A1CE9CAF0F5214F1DD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B4A511E216C55D7CBC45C4EB24922C64 /* Pods-StackOverflowQuestions */,
+				C2C874AB1F832784B8BC4D9809318323 /* Pods_StackOverflow.framework */,
 			);
-			name = "Targets Support Files";
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		44FFF95308E69EE04536BEC709AAA0A0 /* Headers */ = {
+		1512B18E778D6256284F1A7AA49D9D3E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1A83BBEDEF2771578D5D101DD8898A5 /* Pods-StackOverflowQuestions-umbrella.h in Headers */,
+				EBF105CC189CFF3244D908ED8399A2C1 /* Pods-StackOverflow-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		0274728F4048EDA6FED5CEF57E350023 /* Pods-StackOverflowQuestions */ = {
+		E06F7393870521CE882CE06795D2D3D3 /* Pods-StackOverflow */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A10D388F4D528B04AEBA78D960B72E88 /* Build configuration list for PBXNativeTarget "Pods-StackOverflowQuestions" */;
+			buildConfigurationList = 8E8CB83D813B4911A04D227906D6B867 /* Build configuration list for PBXNativeTarget "Pods-StackOverflow" */;
 			buildPhases = (
-				44FFF95308E69EE04536BEC709AAA0A0 /* Headers */,
-				662258B12639152829E0E7D302822FC2 /* Sources */,
-				5163B2C121AEDAF441E55B6D1CE87DDE /* Frameworks */,
-				608DF114163CD3BC3BB25B1B322B5869 /* Resources */,
+				1512B18E778D6256284F1A7AA49D9D3E /* Headers */,
+				BD14C82DF8E2CFF554D1C2F799E13A0B /* Sources */,
+				1A017CB9B3BA115592F47A4C086CE3DC /* Frameworks */,
+				8E601BAE80B0ED878D1B9AE62888CACA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-StackOverflowQuestions";
-			productName = "Pods-StackOverflowQuestions";
-			productReference = 0982695A1EF0BFBFF7D5B132806E37C8 /* Pods_StackOverflowQuestions.framework */;
+			name = "Pods-StackOverflow";
+			productName = "Pods-StackOverflow";
+			productReference = C2C874AB1F832784B8BC4D9809318323 /* Pods_StackOverflow.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -166,17 +166,17 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 126BE60C6FF3B47C103CA2BA1D5DC8E3 /* Products */;
+			productRefGroup = CD6887EB661882A1CE9CAF0F5214F1DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0274728F4048EDA6FED5CEF57E350023 /* Pods-StackOverflowQuestions */,
+				E06F7393870521CE882CE06795D2D3D3 /* Pods-StackOverflow */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		608DF114163CD3BC3BB25B1B322B5869 /* Resources */ = {
+		8E601BAE80B0ED878D1B9AE62888CACA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -186,56 +186,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		662258B12639152829E0E7D302822FC2 /* Sources */ = {
+		BD14C82DF8E2CFF554D1C2F799E13A0B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05346A036BCD93B1495F975FF9935C20 /* Pods-StackOverflowQuestions-dummy.m in Sources */,
+				7CF4808A862C59F0F095C77A6D5E75E1 /* Pods-StackOverflow-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		2E01353B982209FEDAF682ED9DE27EC4 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1757557834599D6D943E580B97ECE5B /* Pods-StackOverflowQuestions.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-StackOverflowQuestions/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-StackOverflowQuestions/Pods-StackOverflowQuestions.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		8C3D32AC054F4DBEE82EB2FD6A303D73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -359,9 +320,9 @@
 			};
 			name = Release;
 		};
-		DF77C045145530C2289E8B3CCB01631F /* Debug */ = {
+		C28B0F42321D0F6F0B075F6A7AD09CCF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BD656C33299896D31D3539D06BFB801 /* Pods-StackOverflowQuestions.debug.xcconfig */;
+			baseConfigurationReference = E2709DE9DE244523DD23373DC322EC11 /* Pods-StackOverflow.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -374,7 +335,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-StackOverflowQuestions/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-StackOverflow/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -383,7 +344,46 @@
 					"@loader_path/Frameworks",
 				);
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-StackOverflowQuestions/Pods-StackOverflowQuestions.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-StackOverflow/Pods-StackOverflow.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		CBFC42CDA5D8671DC3DF091CA1A33FD4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1FA2A94A32B40B8546BB9643F21C5A1 /* Pods-StackOverflow.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StackOverflow/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StackOverflow/Pods-StackOverflow.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -409,11 +409,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A10D388F4D528B04AEBA78D960B72E88 /* Build configuration list for PBXNativeTarget "Pods-StackOverflowQuestions" */ = {
+		8E8CB83D813B4911A04D227906D6B867 /* Build configuration list for PBXNativeTarget "Pods-StackOverflow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DF77C045145530C2289E8B3CCB01631F /* Debug */,
-				2E01353B982209FEDAF682ED9DE27EC4 /* Release */,
+				CBFC42CDA5D8671DC3DF091CA1A33FD4 /* Debug */,
+				C28B0F42321D0F6F0B075F6A7AD09CCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
