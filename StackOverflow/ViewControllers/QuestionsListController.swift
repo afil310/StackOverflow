@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SafariServices
+import WebKit
 
 class QuestionsListController: UIViewController {
 
@@ -19,6 +19,7 @@ class QuestionsListController: UIViewController {
     var soRequest = StackoverflowRequest()
     let reachability = Reachability()!
     let networkBar = NetworkBar()
+    lazy var webViewController = WebViewController()
     
     
     override func viewDidLoad() {
@@ -67,10 +68,7 @@ class QuestionsListController: UIViewController {
     
     @objc func presentSettingsPage() {
         let settingsStoryboard = UIStoryboard(name: "Settings", bundle: nil)
-        
-        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsTable") as? SettingsTableController else {
-            return
-        }
+        guard let settingsPage = settingsStoryboard.instantiateViewController(withIdentifier: "SettingsTable") as? SettingsTableController else {return}
         let navigationController = UINavigationController(rootViewController: settingsPage)
         settingsPage.soRequest = soRequest
         settingsPage.quotaMax = response?.quota_max ?? 0
@@ -92,7 +90,7 @@ class QuestionsListController: UIViewController {
         do {
             try reachability.startNotifier()
         } catch {
-            print("could not start reachability notifier")
+            print("Error: could not start reachability notifier")
         }
         networkBar.translatesAutoresizingMaskIntoConstraints = false
         networkBar.isUserInteractionEnabled = false
@@ -130,17 +128,14 @@ extension QuestionsListController: HTTPClientDelegate {
 extension QuestionsListController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard response?.items.count != 0,
-            let urlString = response?.items[indexPath.row].link else {
-            return
-        }
+            let urlString = response?.items[indexPath.row].link else {return}
         guard let url = URL(string: urlString) else {
             print("Error converting \(urlString) to URL link")
             return
         }
-        let safariVC = SFSafariViewController(url: url)
-        safariVC.navigationItem.largeTitleDisplayMode = .never
-        safariVC.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(safariVC, animated: true)
+        webViewController.webView.load(URLRequest(url: url))
+        webViewController.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(webViewController, animated: true)
     }
 }
 

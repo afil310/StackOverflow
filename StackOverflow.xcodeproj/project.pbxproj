@@ -22,6 +22,7 @@
 		55A8478F221CF34C007EF49B /* PickerClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8478E221CF34C007EF49B /* PickerClasses.swift */; };
 		55AE3D4B221AB34E00A2293C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AE3D4A221AB34E00A2293C /* Settings.storyboard */; };
 		55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE3D4D221AD85400A2293C /* SettingsTableController.swift */; };
+		55B6B700222A9CA900FCDA99 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6B6FF222A9CA900FCDA99 /* WebViewController.swift */; };
 		55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */; };
 		55BC97E0222664450043C2B8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC97DF222664450043C2B8 /* Reachability.swift */; };
 		55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0898121FE90C400B0F42E /* HTTPClient.swift */; };
@@ -49,6 +50,7 @@
 		55A8478E221CF34C007EF49B /* PickerClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerClasses.swift; sourceTree = "<group>"; };
 		55AE3D4A221AB34E00A2293C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		55AE3D4D221AD85400A2293C /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
+		55B6B6FF222A9CA900FCDA99 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowRequest.swift; sourceTree = "<group>"; };
 		55BC97DF222664450043C2B8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		55C0898121FE90C400B0F42E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				559A9E8B21FDCC8D00DBB617 /* QuestionsListController.swift */,
 				55AE3D4D221AD85400A2293C /* SettingsTableController.swift */,
+				55B6B6FF222A9CA900FCDA99 /* WebViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */,
 				55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */,
 				55BC97E0222664450043C2B8 /* Reachability.swift in Sources */,
+				55B6B700222A9CA900FCDA99 /* WebViewController.swift in Sources */,
 				55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */,
 				55F156842226A7CB00EC2CD9 /* NetworkBar.swift in Sources */,
 			);
