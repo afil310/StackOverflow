@@ -13,6 +13,9 @@
 		5542288D22211B9500823775 /* Questions.png in Resources */ = {isa = PBXBuildFile; fileRef = 5542288B22211B9400823775 /* Questions.png */; };
 		5542288E22211B9500823775 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 5542288C22211B9500823775 /* Settings.png */; };
 		5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */ = {isa = PBXBuildFile; fileRef = 5545C60921FF4EC5009F4425 /* UITableView.png */; };
+		559712BC222BE48D0063ACD7 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 559712BB222BE48D0063ACD7 /* .travis.yml */; };
+		559712BE222BE7240063ACD7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 559712BD222BE7240063ACD7 /* .gitignore */; };
+		559712C6222BE8F30063ACD7 /* StackOverflowUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559712C5222BE8F30063ACD7 /* StackOverflowUnitTests.swift */; };
 		559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */; };
 		559A9E8C21FDCC8D00DBB617 /* QuestionsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E8B21FDCC8D00DBB617 /* QuestionsListController.swift */; };
 		559A9E8F21FDCC8D00DBB617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559A9E8D21FDCC8D00DBB617 /* Main.storyboard */; };
@@ -32,6 +35,16 @@
 		A3C79D56E0124B0895D55409 /* Pods_StackOverflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D3D0C28D4C635C4B9F3A8E9 /* Pods_StackOverflow.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		559712C8222BE8F30063ACD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 559A9E7E21FDCC8D00DBB617 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 559A9E8521FDCC8D00DBB617;
+			remoteInfo = StackOverflow;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		55422881221FB2BB00823775 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		55422887222030E700823775 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -39,6 +52,11 @@
 		5542288B22211B9400823775 /* Questions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Questions.png; sourceTree = "<group>"; };
 		5542288C22211B9500823775 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		5545C60921FF4EC5009F4425 /* UITableView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableView.png; sourceTree = "<group>"; };
+		559712BB222BE48D0063ACD7 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
+		559712BD222BE7240063ACD7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
+		559712C3222BE8F30063ACD7 /* StackOverflowUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverflowUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		559712C5222BE8F30063ACD7 /* StackOverflowUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowUnitTests.swift; sourceTree = "<group>"; };
+		559712C7222BE8F30063ACD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559A9E8621FDCC8D00DBB617 /* StackOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		559A9E8B21FDCC8D00DBB617 /* QuestionsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListController.swift; sourceTree = "<group>"; };
@@ -64,6 +82,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		559712C0222BE8F30063ACD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		559A9E8321FDCC8D00DBB617 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -132,11 +157,21 @@
 			path = Screenshots;
 			sourceTree = "<group>";
 		};
+		559712C4222BE8F30063ACD7 /* StackOverflowUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				559712C5222BE8F30063ACD7 /* StackOverflowUnitTests.swift */,
+				559712C7222BE8F30063ACD7 /* Info.plist */,
+			);
+			path = StackOverflowUnitTests;
+			sourceTree = "<group>";
+		};
 		559A9E7D21FDCC8D00DBB617 = {
 			isa = PBXGroup;
 			children = (
 				559A9E8821FDCC8D00DBB617 /* StackOverflow */,
 				5545C60821FF4EC5009F4425 /* Screenshots */,
+				559712C4222BE8F30063ACD7 /* StackOverflowUnitTests */,
 				559A9E8721FDCC8D00DBB617 /* Products */,
 				4987790193D87F58E32BC242 /* Pods */,
 				2D6F95D9DBFC7869A6D81EE8 /* Frameworks */,
@@ -147,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				559A9E8621FDCC8D00DBB617 /* StackOverflow.app */,
+				559712C3222BE8F30063ACD7 /* StackOverflowUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,8 +197,10 @@
 				55AE3D4C221AB35D00A2293C /* Storyboards */,
 				55BC97DD22256A5E0043C2B8 /* Views */,
 				55422885221FB9BD00823775 /* ViewControllers */,
-				55422881221FB2BB00823775 /* .swiftlint.yml */,
 				559A9E9521FDCC8F00DBB617 /* Info.plist */,
+				559712BD222BE7240063ACD7 /* .gitignore */,
+				55422881221FB2BB00823775 /* .swiftlint.yml */,
+				559712BB222BE48D0063ACD7 /* .travis.yml */,
 				55422888222030E800823775 /* LICENSE */,
 				55422887222030E700823775 /* README.md */,
 			);
@@ -200,6 +238,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		559712C2222BE8F30063ACD7 /* StackOverflowUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 559712CA222BE8F30063ACD7 /* Build configuration list for PBXNativeTarget "StackOverflowUnitTests" */;
+			buildPhases = (
+				559712BF222BE8F30063ACD7 /* Sources */,
+				559712C0222BE8F30063ACD7 /* Frameworks */,
+				559712C1222BE8F30063ACD7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				559712C9222BE8F30063ACD7 /* PBXTargetDependency */,
+			);
+			name = StackOverflowUnitTests;
+			productName = StackOverflowUnitTests;
+			productReference = 559712C3222BE8F30063ACD7 /* StackOverflowUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		559A9E8521FDCC8D00DBB617 /* StackOverflow */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 559A9E9821FDCC8F00DBB617 /* Build configuration list for PBXNativeTarget "StackOverflow" */;
@@ -229,6 +285,10 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Andrey Filonov";
 				TargetAttributes = {
+					559712C2222BE8F30063ACD7 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 559A9E8521FDCC8D00DBB617;
+					};
 					559A9E8521FDCC8D00DBB617 = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -248,11 +308,19 @@
 			projectRoot = "";
 			targets = (
 				559A9E8521FDCC8D00DBB617 /* StackOverflow */,
+				559712C2222BE8F30063ACD7 /* StackOverflowUnitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		559712C1222BE8F30063ACD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		559A9E8421FDCC8D00DBB617 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,7 +329,9 @@
 				55422882221FB2BB00823775 /* .swiftlint.yml in Resources */,
 				559A9E9421FDCC8F00DBB617 /* LaunchScreen.storyboard in Resources */,
 				5542288A222030E800823775 /* LICENSE in Resources */,
+				559712BE222BE7240063ACD7 /* .gitignore in Resources */,
 				5542288D22211B9500823775 /* Questions.png in Resources */,
+				559712BC222BE48D0063ACD7 /* .travis.yml in Resources */,
 				5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */,
 				55422889222030E800823775 /* README.md in Resources */,
 				559A9E9121FDCC8F00DBB617 /* Assets.xcassets in Resources */,
@@ -315,6 +385,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		559712BF222BE8F30063ACD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				559712C6222BE8F30063ACD7 /* StackOverflowUnitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		559A9E8221FDCC8D00DBB617 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +414,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		559712C9222BE8F30063ACD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 559A9E8521FDCC8D00DBB617 /* StackOverflow */;
+			targetProxy = 559712C8222BE8F30063ACD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		559A9E8D21FDCC8D00DBB617 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -356,6 +442,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		559712CB222BE8F30063ACD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CX5D66CWL;
+				INFOPLIST_FILE = StackOverflowUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = afil.StackOverflowUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StackOverflow.app/StackOverflow";
+			};
+			name = Debug;
+		};
+		559712CC222BE8F30063ACD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 3CX5D66CWL;
+				INFOPLIST_FILE = StackOverflowUnitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = afil.StackOverflowUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StackOverflow.app/StackOverflow";
+			};
+			name = Release;
+		};
 		559A9E9621FDCC8F00DBB617 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -515,6 +643,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		559712CA222BE8F30063ACD7 /* Build configuration list for PBXNativeTarget "StackOverflowUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				559712CB222BE8F30063ACD7 /* Debug */,
+				559712CC222BE8F30063ACD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		559A9E8121FDCC8D00DBB617 /* Build configuration list for PBXProject "StackOverflow" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,7 +1,7 @@
 
 # StackOverflow client
 
-[![Swift 4.2](https://img.shields.io/badge/swift-4.2-orange.svg)](https://developer.apple.com/swift/) [![Platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)](https://github.com/afil310/StackOverflow) [![License](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/afil310/StackOverflow)
+[![Swift 4.2](https://img.shields.io/badge/swift-4.2-orange.svg)](https://developer.apple.com/swift/) [![Platform](https://img.shields.io/badge/platform-iOS-brightgreen.svg)](https://github.com/afil310/StackOverflow) [![CI Status](https://api.travis-ci.org/afil310/StackOverflow.svg)](https://travis-ci.org/afil310/StackOverflow) [![License](https://img.shields.io/badge/licence-MIT-blue.svg)](https://github.com/afil310/StackOverflow)
 
 ## Description
 A simple StackOverflow client written in Swift 4.2.
