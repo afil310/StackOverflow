@@ -76,7 +76,7 @@ class EmptyResultCell: QuestionsListCell {
         Suggestions:
         ・Try fewer keywords.
         ・Try different keywords.
-        ・Try more general keywords.
+        ・Try broader date range.
         """
     }
 }

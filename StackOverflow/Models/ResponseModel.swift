@@ -13,7 +13,7 @@
 // identifier names checking is disabled as identifier are compliant with the stackexchange API response model
 
 class Response: Codable {
-    let items: [Question]
+    var items: [Question]
     let has_more: Bool
     let backoff: Int?
     let quota_max: Int
@@ -32,7 +32,7 @@ struct Question: Codable {
     let last_edit_date: Int?
     let question_id: Int
     let link: String
-    let title: String
+    var title: String
 }
 
 struct Owner: Codable {

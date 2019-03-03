@@ -151,7 +151,6 @@ extension QuestionsListController: SettingsTableDelegate {
 extension QuestionsListController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {return}
-        print("query:", query)
         soRequest.query = query
         if query.count > 0 {
             loadData(url: soRequest.url)

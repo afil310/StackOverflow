@@ -35,13 +35,13 @@ class TableDataSource: NSObject, UITableViewDataSource {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "questionCell") as? QuestionCell,
             let question = response?.items[indexPath.row]
-            else {
+        else {
                 return UITableViewCell()
         }
         
         cell.setup()
         
-        cell.questionTitle.text = question.title.htmlToString ?? question.title
+        cell.questionTitle.text = question.title
         cell.votesCount.text = String(question.score)
         cell.answersCount.text = String(question.answer_count)
         
@@ -68,17 +68,6 @@ class TableDataSource: NSObject, UITableViewDataSource {
     }
     
     
-//    func setupCell(_ cell: QuestionCell) {
-//        let backgroundView = UIView()
-//        backgroundView.backgroundColor = UIColor(red: 0.5647, green: 0.8196, blue: 0.9765, alpha: 1.0)
-//        backgroundView.layer.cornerRadius = cell.cellView.frame.height / 10
-//
-//        cell.selectedBackgroundView = backgroundView
-//        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 10
-//        cell.cellView.layer.backgroundColor = UIColor(red: 0.87, green: 0.95, blue: 0.99, alpha: 1.0).cgColor
-//    }
-    
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return rowHeight
     }
@@ -94,16 +83,16 @@ class TableDataSource: NSObject, UITableViewDataSource {
 
 
 extension String {
-    /// Converts HTML string to a `String?`
+    /// Converts HTML string to `String?`
     
     var htmlToString: String? {
-        guard let decodedString = try? NSAttributedString(data: Data(utf8),
+        guard let convertedString = try? NSAttributedString(data: Data(utf8),
                                                           options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding: String.Encoding.utf8.rawValue],
                                                           documentAttributes: nil)
             else {
                 return nil
             }
-        return decodedString.string
+        return convertedString.string
         
     }
 }

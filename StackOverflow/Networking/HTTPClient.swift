@@ -55,7 +55,12 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
                     didCompleteWithError error: Error?) {
         httpClientDelegate?.dataTaskProgress(progress: 1.0)
         if error == nil {
-            httpClientDelegate?.requestCompleted(response: decodeResponse(data: data))
+            if let response = decodeResponse(data: data) {
+                for itm in 0..<response.items.count {
+                    response.items[itm].title = response.items[itm].title.htmlToString ?? response.items[itm].title
+                }
+                httpClientDelegate?.requestCompleted(response: response)
+            }
         } else {
             print("Error getting data from server", error as? String ?? "")
         }
@@ -69,6 +74,7 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
         let progress = Float(self.data.count) / Float(expectedContentLength)
         httpClientDelegate?.dataTaskProgress(progress: progress)
     }
+    
     
     func urlSession(_ session: URLSession,
                     dataTask: URLSessionDataTask,
