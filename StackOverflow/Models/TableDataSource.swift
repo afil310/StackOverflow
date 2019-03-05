@@ -42,21 +42,12 @@ class TableDataSource: NSObject, UITableViewDataSource {
         cell.setup()
         
         cell.questionTitle.text = question.title
-        cell.votesCount.text = String(question.score)
+        cell.votesCount.text = numberAbbreviated(number: question.score)
         cell.answersCount.text = String(question.answer_count)
-        
-        if question.view_count < 1000 {
-            cell.viewsCount.text = String(question.view_count)
-        } else if question.view_count < 1_000_000 {
-            cell.viewsCount.text = String(Int(round(Double(question.view_count)/1000.0))) + "k"
-        } else {
-            cell.viewsCount.text = String(Int(round(Double(question.view_count)/1000000.0))) + "m"
-        }
-        
+        cell.viewsCount.text = numberAbbreviated(number: question.view_count)
         cell.answersCount.backgroundColor = question.is_answered ?
         UIColor(red: 95/255, green: 186/255, blue: 125/255, alpha: 1.0) :
         UIColor(red: 0.9333, green: 0.9333, blue: 0.9333, alpha: 1.0)
-        
         cell.date.text = int2date(unixdate: question.last_activity_date)
         var tagsText = "|"
         for tag in question.tags {
@@ -72,12 +63,24 @@ class TableDataSource: NSObject, UITableViewDataSource {
         return rowHeight
     }
     
+    
     func int2date(unixdate: Int) -> String {
         let dayTimePeriodFormatter = DateFormatter()
         dayTimePeriodFormatter.dateFormat = "dd.MM.YYYY hh:mm"
         
         let date = NSDate(timeIntervalSince1970: TimeInterval(unixdate))
         return dayTimePeriodFormatter.string(from: date as Date)
+    }
+    
+    
+    func numberAbbreviated(number: Int) -> String {
+        if number < 1000 {
+            return String(number)
+        } else if number < 1_000_000 {
+            return String(number / 1000) + "k"
+        } else {
+            return String(number / 1_000_000) + "M"
+        }
     }
 }
 
