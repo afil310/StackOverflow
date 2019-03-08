@@ -17,7 +17,7 @@ class HTTPClient: NSObject {
                           delegateQueue: OperationQueue.main)
     }()
     var task: URLSessionDataTask?
-    private var data = Data()
+    private var dataReceived = Data()
     private var expectedContentLength = Int64(0)
     weak var httpClientDelegate: HTTPClientDelegate?
     
@@ -55,7 +55,7 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
                     didCompleteWithError error: Error?) {
         httpClientDelegate?.dataTaskProgress(progress: 1.0)
         if error == nil {
-            if let response = decodeResponse(data: data) {
+            if let response = decodeResponse(data: dataReceived) {
                 for itm in 0..<response.items.count {
                     response.items[itm].title = response.items[itm].title.htmlToString ?? response.items[itm].title
                 }
@@ -70,8 +70,8 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
     func urlSession(_ session: URLSession,
                     dataTask: URLSessionDataTask,
                     didReceive data: Data) {
-        self.data.append(data)
-        let progress = Float(self.data.count) / Float(expectedContentLength)
+        self.dataReceived.append(data)
+        let progress = Float(self.dataReceived.count) / Float(expectedContentLength)
         httpClientDelegate?.dataTaskProgress(progress: progress)
     }
     
@@ -85,7 +85,7 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
         
         if httpResponse.allHeaderFields["Content-Encoding"] as? String == "gzip" {
             guard let gzippedLength = httpResponse.allHeaderFields["Content-Length"] as? String else {return}
-            expectedContentLength = Int64((Int(gzippedLength) ?? 1) * 7) // dirty hack, rough estimation of the real length of unzipped data
+            expectedContentLength = Int64((Int(gzippedLength) ?? 1) * 7) // a dirty hack, rough upper estimation of the real length of unzipped data
         } else {
             expectedContentLength = response.expectedContentLength
         }

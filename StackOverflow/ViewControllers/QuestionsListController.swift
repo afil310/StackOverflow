@@ -17,7 +17,7 @@ class QuestionsListController: UIViewController {
     var response: Response?
     var tableDataSource: TableDataSource?
     var soRequest = StackoverflowRequest()
-    let reachability = Reachability()!
+    let reachability = Reachability()
     let networkBar = NetworkBar()
     lazy var webViewController = WebViewController()
     
@@ -88,7 +88,7 @@ class QuestionsListController: UIViewController {
     func setupNetworkBar() {
         NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
         do {
-            try reachability.startNotifier()
+            try reachability?.startNotifier()
         } catch {
             print("Error: could not start reachability notifier")
         }
