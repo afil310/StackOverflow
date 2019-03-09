@@ -13,6 +13,9 @@
 		5542288D22211B9500823775 /* Questions.png in Resources */ = {isa = PBXBuildFile; fileRef = 5542288B22211B9400823775 /* Questions.png */; };
 		5542288E22211B9500823775 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 5542288C22211B9500823775 /* Settings.png */; };
 		5545C60A21FF4EC6009F4425 /* UITableView.png in Resources */ = {isa = PBXBuildFile; fileRef = 5545C60921FF4EC5009F4425 /* UITableView.png */; };
+		5578448D22338F9500C71BA8 /* Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578448C22338F9500C71BA8 /* Picker.swift */; };
+		5578448F2233C80300C71BA8 /* DatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5578448E2233C80300C71BA8 /* DatePicker.swift */; };
+		557844912233C83600C71BA8 /* PickerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557844902233C83600C71BA8 /* PickerToolbar.swift */; };
 		559712BC222BE48D0063ACD7 /* .travis.yml in Resources */ = {isa = PBXBuildFile; fileRef = 559712BB222BE48D0063ACD7 /* .travis.yml */; };
 		559712BE222BE7240063ACD7 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 559712BD222BE7240063ACD7 /* .gitignore */; };
 		559712C6222BE8F30063ACD7 /* StackOverflowUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559712C5222BE8F30063ACD7 /* StackOverflowUnitTests.swift */; };
@@ -22,12 +25,12 @@
 		559A9E9121FDCC8F00DBB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 559A9E9021FDCC8F00DBB617 /* Assets.xcassets */; };
 		559A9E9421FDCC8F00DBB617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 559A9E9221FDCC8F00DBB617 /* LaunchScreen.storyboard */; };
 		559A9E9C21FDCDFA00DBB617 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */; };
-		55A8478F221CF34C007EF49B /* PickerClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A8478E221CF34C007EF49B /* PickerClasses.swift */; };
 		55AE3D4B221AB34E00A2293C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55AE3D4A221AB34E00A2293C /* Settings.storyboard */; };
 		55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AE3D4D221AD85400A2293C /* SettingsTableController.swift */; };
 		55B6B700222A9CA900FCDA99 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B6B6FF222A9CA900FCDA99 /* WebViewController.swift */; };
 		55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */; };
 		55BC97E0222664450043C2B8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC97DF222664450043C2B8 /* Reachability.swift */; };
+		55BF9D652233E29E00E0C041 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BF9D642233E29E00E0C041 /* Constants.swift */; };
 		55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0898121FE90C400B0F42E /* HTTPClient.swift */; };
 		55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */; };
 		55D9220921FEA41C00F8A0A6 /* QuestionsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */; };
@@ -52,6 +55,9 @@
 		5542288B22211B9400823775 /* Questions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Questions.png; sourceTree = "<group>"; };
 		5542288C22211B9500823775 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		5545C60921FF4EC5009F4425 /* UITableView.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UITableView.png; sourceTree = "<group>"; };
+		5578448C22338F9500C71BA8 /* Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Picker.swift; sourceTree = "<group>"; };
+		5578448E2233C80300C71BA8 /* DatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePicker.swift; sourceTree = "<group>"; };
+		557844902233C83600C71BA8 /* PickerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerToolbar.swift; sourceTree = "<group>"; };
 		559712BB222BE48D0063ACD7 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = SOURCE_ROOT; };
 		559712BD222BE7240063ACD7 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		559712C3222BE8F30063ACD7 /* StackOverflowUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StackOverflowUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,12 +71,12 @@
 		559A9E9321FDCC8F00DBB617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		559A9E9521FDCC8F00DBB617 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559A9E9B21FDCDFA00DBB617 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
-		55A8478E221CF34C007EF49B /* PickerClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerClasses.swift; sourceTree = "<group>"; };
 		55AE3D4A221AB34E00A2293C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		55AE3D4D221AD85400A2293C /* SettingsTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableController.swift; sourceTree = "<group>"; };
 		55B6B6FF222A9CA900FCDA99 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowRequest.swift; sourceTree = "<group>"; };
 		55BC97DF222664450043C2B8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		55BF9D642233E29E00E0C041 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		55C0898121FE90C400B0F42E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListCell.swift; sourceTree = "<group>"; };
@@ -192,6 +198,7 @@
 			children = (
 				55BC97DE22256A760043C2B8 /* Application */,
 				559A9E9021FDCC8F00DBB617 /* Assets.xcassets */,
+				55BF9D632233E28E00E0C041 /* Helpers */,
 				55422883221FB92C00823775 /* Models */,
 				55422884221FB98A00823775 /* Networking */,
 				55AE3D4C221AB35D00A2293C /* Storyboards */,
@@ -221,8 +228,10 @@
 			isa = PBXGroup;
 			children = (
 				55F156832226A7CB00EC2CD9 /* NetworkBar.swift */,
-				55A8478E221CF34C007EF49B /* PickerClasses.swift */,
 				55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */,
+				5578448C22338F9500C71BA8 /* Picker.swift */,
+				5578448E2233C80300C71BA8 /* DatePicker.swift */,
+				557844902233C83600C71BA8 /* PickerToolbar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,6 +242,14 @@
 				559A9E8921FDCC8D00DBB617 /* AppDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		55BF9D632233E28E00E0C041 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				55BF9D642233E29E00E0C041 /* Constants.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,14 +415,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				559A9E9C21FDCDFA00DBB617 /* ResponseModel.swift in Sources */,
+				5578448F2233C80300C71BA8 /* DatePicker.swift in Sources */,
 				559A9E8C21FDCC8D00DBB617 /* QuestionsListController.swift in Sources */,
 				55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */,
 				55D9220921FEA41C00F8A0A6 /* QuestionsListCell.swift in Sources */,
 				55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */,
-				55A8478F221CF34C007EF49B /* PickerClasses.swift in Sources */,
+				55BF9D652233E29E00E0C041 /* Constants.swift in Sources */,
 				559A9E8A21FDCC8D00DBB617 /* AppDelegate.swift in Sources */,
 				55AE3D4E221AD85400A2293C /* SettingsTableController.swift in Sources */,
 				55BC97E0222664450043C2B8 /* Reachability.swift in Sources */,
+				5578448D22338F9500C71BA8 /* Picker.swift in Sources */,
+				557844912233C83600C71BA8 /* PickerToolbar.swift in Sources */,
 				55B6B700222A9CA900FCDA99 /* WebViewController.swift in Sources */,
 				55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */,
 				55F156842226A7CB00EC2CD9 /* NetworkBar.swift in Sources */,

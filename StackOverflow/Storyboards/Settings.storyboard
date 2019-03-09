@@ -12,7 +12,7 @@
         <!--Settings Table Controller-->
         <scene sceneID="UJK-mt-JeH">
             <objects>
-                <tableViewController storyboardIdentifier="SettingsTable" id="bsx-6I-ptz" customClass="SettingsTableController" customModule="StackOverflowQuestions" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SettingsTable" id="bsx-6I-ptz" customClass="SettingsTableController" customModule="StackOverflow" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tKJ-Di-Lo7">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="44" id="JWy-NB-ayA"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
