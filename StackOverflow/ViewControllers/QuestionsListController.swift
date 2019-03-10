@@ -19,14 +19,13 @@ class QuestionsListController: UIViewController {
     var soRequest = StackoverflowRequest()
     let reachability = Reachability()
     let networkBar = NetworkBar()
+    var activityIndicator: UIActivityIndicatorView!
     lazy var webViewController = WebViewController()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
-        setupSearchBar()
-        setupNetworkBar()
+        setupSubViews()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
         loadData(url: soRequest.url)
@@ -41,6 +40,14 @@ class QuestionsListController: UIViewController {
         case .none:
             networkBar.show(color: .red, message: "Internet is not available")
         }
+    }
+    
+    
+    func setupSubViews() {
+        setupNavigationBar()
+        setupSearchBar()
+        setupNetworkBar()
+        activityIndicator = ActivityIndicator(view: view)
     }
 
     
@@ -79,6 +86,11 @@ class QuestionsListController: UIViewController {
     
     
     func loadData(url: URL?) {
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tableView.alpha = 0.0
+        }, completion: { _ in
+            self.activityIndicator.startAnimating()
+        })
         let client = HTTPClient(url: url)
         client.httpClientDelegate = self
         client.request()
@@ -109,6 +121,10 @@ extension QuestionsListController: HTTPClientDelegate {
         tableView.dataSource = tableDataSource
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.activityIndicator.stopAnimating()
+            UIView.animate(withDuration: 0.5, animations: {
+                self.tableView.alpha = 1.0
+            })
         }
     }
     
@@ -133,7 +149,9 @@ extension QuestionsListController: UITableViewDelegate {
             print("Error converting \(urlString) to URL link")
             return
         }
+        webViewController.activityIndicator.startAnimating()
         webViewController.webView.load(URLRequest(url: url))
+        webViewController.webView.alpha = 0.0
         webViewController.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(webViewController, animated: true)
     }

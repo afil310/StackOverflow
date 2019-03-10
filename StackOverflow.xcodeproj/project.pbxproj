@@ -31,6 +31,7 @@
 		55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */; };
 		55BC97E0222664450043C2B8 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BC97DF222664450043C2B8 /* Reachability.swift */; };
 		55BF9D652233E29E00E0C041 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BF9D642233E29E00E0C041 /* Constants.swift */; };
+		55BF9D672233FD7500E0C041 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BF9D662233FD7500E0C041 /* ActivityIndicator.swift */; };
 		55C0898221FE90C400B0F42E /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C0898121FE90C400B0F42E /* HTTPClient.swift */; };
 		55D9220721FEA19C00F8A0A6 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */; };
 		55D9220921FEA41C00F8A0A6 /* QuestionsListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */; };
@@ -77,6 +78,7 @@
 		55BA70E621FEC40A0084E6F4 /* StackOverflowRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackOverflowRequest.swift; sourceTree = "<group>"; };
 		55BC97DF222664450043C2B8 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		55BF9D642233E29E00E0C041 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		55BF9D662233FD7500E0C041 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		55C0898121FE90C400B0F42E /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		55D9220621FEA19C00F8A0A6 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		55D9220821FEA41C00F8A0A6 /* QuestionsListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListCell.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				5578448C22338F9500C71BA8 /* Picker.swift */,
 				5578448E2233C80300C71BA8 /* DatePicker.swift */,
 				557844902233C83600C71BA8 /* PickerToolbar.swift */,
+				55BF9D662233FD7500E0C041 /* ActivityIndicator.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				55BC97E0222664450043C2B8 /* Reachability.swift in Sources */,
 				5578448D22338F9500C71BA8 /* Picker.swift in Sources */,
 				557844912233C83600C71BA8 /* PickerToolbar.swift in Sources */,
+				55BF9D672233FD7500E0C041 /* ActivityIndicator.swift in Sources */,
 				55B6B700222A9CA900FCDA99 /* WebViewController.swift in Sources */,
 				55BA70E721FEC40A0084E6F4 /* StackOverflowRequest.swift in Sources */,
 				55F156842226A7CB00EC2CD9 /* NetworkBar.swift in Sources */,
