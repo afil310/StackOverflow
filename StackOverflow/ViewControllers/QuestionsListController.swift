@@ -178,8 +178,10 @@ extension QuestionsListController: UISearchBarDelegate {
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        // If the Cancel button clicked, then reload questions list
-        soRequest.query = ""
-        loadData(url: soRequest.url)
+        // If the Cancel button clicked, then clear query and reload questions list
+        if soRequest.query != "" {
+            soRequest.query = ""
+            loadData(url: soRequest.url)
+        }
     }
 }

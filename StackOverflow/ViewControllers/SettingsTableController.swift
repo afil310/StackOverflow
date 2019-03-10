@@ -41,7 +41,7 @@ class SettingsTableController: UITableViewController {
         let cancelBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel,
                                                   target: self, action: #selector(cancelButtonTapped))
         navigationItem.rightBarButtonItem = cancelBarButtonItem
-        navigationItem.title = "Settings"
+        navigationItem.title = "Request parameters"
     }
     
     

@@ -32,13 +32,17 @@ struct StackoverflowRequest: Equatable {
         urlString += "pagesize=" + String(pageSize)
         urlString += "&fromdate=" + String(fromDate)
         urlString += "&todate=" + String(toDate)
-        urlString += "&sort=" + sortBy
+        if query != "" && ["hot", "week", "month"].contains(sortBy) {
+            urlString +=  "&sort=" + "votes"
+        } else {
+            urlString += "&sort=" + sortBy
+        }
         urlString += "&order=" + sortOrder
 //        urlString += "&min=" + String(sortMinValue)
         urlString += "&tagged=" + tag
         urlString += "&q=" + query
         urlString += "&site=" + site
-        print("Stackoverflow urlString:", urlString)
+        print(site, "urlString:", urlString)
         return URL(string: urlString.addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlQueryAllowed) ?? "")
     }
     

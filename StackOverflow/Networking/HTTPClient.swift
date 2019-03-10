@@ -43,6 +43,7 @@ func decodeResponse(data: Data) -> Response? {
         decodedResponse = try decoder.decode(Response.self, from: data)
     } catch let error {
         print("Response decoding error:", error)
+        print("Received response:", String(data: data, encoding: .utf8)!)
         return nil
     }
     return decodedResponse
@@ -82,7 +83,7 @@ extension HTTPClient: URLSessionDelegate, URLSessionDataDelegate {
                     completionHandler: @escaping (URLSession.ResponseDisposition) -> Void) {
 
         guard let httpResponse = response as? HTTPURLResponse else {return}
-        
+        print("Server response code:", httpResponse.statusCode)
         if httpResponse.allHeaderFields["Content-Encoding"] as? String == "gzip" {
             guard let gzippedLength = httpResponse.allHeaderFields["Content-Length"] as? String else {return}
             expectedContentLength = Int64((Int(gzippedLength) ?? 1) * 7) // a dirty hack, rough upper estimation of the real length of unzipped data
