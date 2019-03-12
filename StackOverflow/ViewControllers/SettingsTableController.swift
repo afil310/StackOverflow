@@ -64,11 +64,11 @@ class SettingsTableController: UITableViewController {
     
     
     @objc func doneButtonTapped() {
-        if !(soRequestLocalCopy == soRequest) {
-            delegate?.settingsChanged(request: soRequestLocalCopy)
-            persistRequestParameters(soRequestLocalCopy: soRequestLocalCopy)
-        }
         dismiss(animated: true)
+        if !(soRequestLocalCopy == soRequest) {
+            persistRequestParameters(soRequestLocalCopy: soRequestLocalCopy)
+            delegate?.settingsChanged(request: soRequestLocalCopy)
+        }
     }
     
     

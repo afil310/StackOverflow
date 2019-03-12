@@ -21,6 +21,8 @@ class QuestionsListController: UIViewController {
     let networkBar = NetworkBar()
     var activityIndicator: UIActivityIndicatorView!
     lazy var webViewController = WebViewController()
+    var inetIsAvailable = true
+    var requestPending = false
     
     
     override func viewDidLoad() {
@@ -28,17 +30,30 @@ class QuestionsListController: UIViewController {
         setupSubViews()
         tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         tableView.delegate = self
-        loadData(url: soRequest.url)
+        if reachability?.connection.description != "No Connection" {
+            loadData(url: soRequest.url)
+        } else {
+            inetIsAvailable = false
+            requestPending = true
+            showInetIsNotAvailableAlert(title: "Questions list")
+        }
+        
     }
     
     
     @objc func reachabilityChanged(note: Notification) {
         guard let reachability = note.object as? Reachability else {return}
+        let greenColor = UIColor(red: 95/255, green: 186/255, blue: 125/255, alpha: 1.0)
         switch reachability.connection {
         case .wifi, .cellular:
-            networkBar.hide(color: UIColor(red: 95/255, green: 186/255, blue: 125/255, alpha: 1.0), message: "Internet is available")
+            networkBar.hide(color: greenColor, message: "Internet is available")
+            inetIsAvailable = true
+            if requestPending {
+                loadData(url: soRequest.url)
+            }
         case .none:
             networkBar.show(color: .red, message: "Internet is not available")
+            inetIsAvailable = false
         }
     }
     
@@ -116,6 +131,7 @@ class QuestionsListController: UIViewController {
 
 extension QuestionsListController: HTTPClientDelegate {
     func requestCompleted(response: Response?) {
+        requestPending = false
         self.response = response
         tableDataSource = TableDataSource(response: response)
         tableView.dataSource = tableDataSource
@@ -138,6 +154,13 @@ extension QuestionsListController: HTTPClientDelegate {
             })
         }
     }
+    
+    
+    func showInetIsNotAvailableAlert(title: String) {
+        let alert = UIAlertController(title: title, message: "Internet connection is not available.\nReconnect and try again", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alert, animated: true)
+    }
 }
 
 
@@ -149,11 +172,15 @@ extension QuestionsListController: UITableViewDelegate {
             print("Error converting \(urlString) to URL link")
             return
         }
-        webViewController.activityIndicator.startAnimating()
-        webViewController.webView.load(URLRequest(url: url))
-        webViewController.webView.alpha = 0.0
-        webViewController.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(webViewController, animated: true)
+        if inetIsAvailable {
+            webViewController.activityIndicator.startAnimating()
+            webViewController.webView.load(URLRequest(url: url))
+            webViewController.webView.alpha = 0.0
+            webViewController.navigationItem.largeTitleDisplayMode = .never
+            navigationController?.pushViewController(webViewController, animated: true)
+        } else {
+            showInetIsNotAvailableAlert(title: "Question page")
+        }
     }
 }
 
@@ -161,18 +188,27 @@ extension QuestionsListController: UITableViewDelegate {
 extension QuestionsListController: SettingsTableDelegate {
     func settingsChanged(request: StackoverflowRequest) {
         soRequest = request
-        loadData(url: request.url)
+        if inetIsAvailable {
+            loadData(url: soRequest.url)
+        } else {
+            requestPending = true
+            showInetIsNotAvailableAlert(title: "Questions list")
+        }
     }
 }
 
 
 extension QuestionsListController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let query = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {return}
+        guard let query = searchBar.text?.trimmingCharacters(in: .whitespacesAndNewlines),
+        soRequest.query != query else {return}
         soRequest.query = query
-        if query.count > 0 {
+        if inetIsAvailable {
             loadData(url: soRequest.url)
             navigationController?.navigationBar.isHidden = false
+        } else {
+            showInetIsNotAvailableAlert(title: "Search")
+            requestPending = true
         }
     }
     
@@ -181,7 +217,11 @@ extension QuestionsListController: UISearchBarDelegate {
         // If the Cancel button clicked, then clear query and reload questions list
         if soRequest.query != "" {
             soRequest.query = ""
-            loadData(url: soRequest.url)
+            if inetIsAvailable {
+                loadData(url: soRequest.url)
+            } else {
+                requestPending = true
+            }
         }
     }
 }
